@@ -10,7 +10,7 @@
   display: block;
   width: 100vw;
   padding: 5px;
-  border: black solid 5px;
+  border-bottom: black solid 5px;
 }
 #welcome-section {
   background-color:#AAAAAA;
@@ -27,7 +27,7 @@
 }
 #project-tiles {
   background-color: lightblue;
-  height: 100vh;
+  height: 100%;
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

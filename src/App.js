@@ -25,7 +25,7 @@ function App() {
     },
     {
       "id": "markdown-previewer",
-      "title": "markdown-previewer",
+      "title": "markdown previewer",
       "url": "https://quizzical-volhard-f6d8e1.netlify.app/"
     }
   ]
