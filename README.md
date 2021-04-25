@@ -1,4 +1,4 @@
-# portfolio
+# Portfolio
 
 Click on project tiles to see projects I have completed
 
