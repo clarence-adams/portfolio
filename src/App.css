@@ -5,12 +5,17 @@
 }
 #navbar {
   background-color: #666666;
-  text-align: center;
-  position: fixed;
-  display: block;
+  height: 6vh;
   width: 100vw;
-  padding: 5px;
+  padding-right: 10px;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   border-bottom: black solid 5px;
+}
+#linkedin-link {
+  padding-right: 20px;
 }
 #welcome-section {
   background-color:#AAAAAA;
@@ -20,18 +25,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 #page-title {
-  padding-top: 40px;
 }
 #project-tiles {
   background-color: lightblue;
   height: 100%;
+  scroll-margin-top: calc(5vh + 10px);
+  padding: 10px;
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 10px;
+}
+.navbar-button {
+  padding-right: 10px;
 }
 .project-tile {
   cursor: pointer;

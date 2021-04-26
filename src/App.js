@@ -1,4 +1,10 @@
 import './App.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fab} from '@fortawesome/free-brands-svg-icons'
+import {faWrench} from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faWrench)
 // app
 function App() {
   // array of objects that hold info needed to construct tile components
@@ -34,15 +40,25 @@ function App() {
     <div className="App">
       <header>
         <nav id="navbar">
-          <a href="#project-tiles">Projects</a><br/>
-          <a href="https://github.com/clarence-de-coder" id="profile-link" target="_blank" rel="noreferrer">Git-Hub Profile</a>
+          <a class="navbar-button" href="#welcome-section">About</a>
+          <a class="navbar-button" href="#project-tiles">Projects</a>
+          <a class="navbar-button" id="github-link"
+          href="https://github.com/clarence-de-coder" target="_blank"
+          rel="noreferrer">
+            <FontAwesomeIcon icon={["fab", "github-square"]} size="3x"/>
+          </a>
+          <a class="navbar-button" id="linkedin-link"
+          href="https://www.linkedin.com/in/clarence-adams-b81b875a/"
+          target="_blank" rel="noreferrer">
+            <FontAwesomeIcon icon={["fab", "linkedin"]} size="3x"/>
+          </a>
         </nav>
       </header>
       <main>
         <div id="welcome-section">
           <h1 id="page-title">Hi, I'm Clarence</h1>
           <p>This is my portfolio of projects</p>
-          <i>(currently under development but funcitonal)</i>
+          <i>currently under development but fully functional <FontAwesomeIcon icon="wrench"/></i>
         </div>
         <div id="project-tiles">
           {tiles.map((element, index) =>
