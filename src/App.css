@@ -1,17 +1,46 @@
-@media (max-width: 500px) {
-  p {
-    font-size: 32px;
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
   }
+  a {
+    font-size: 1.25rem !important;
+  }
+  p {
+    font-size: 1rem !important;
+  }
+  #navbar {
+    height: 3rem !important;
+  }
+  #linkedin-link {
+      padding-right: 10px !important;
+    }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  color: #E6ADD8;
+}
+a {
+  text-decoration: none;
+  color: #E6ADD8;
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1.5rem;
 }
 #navbar {
-  background-color: #333333;
-  height: 6vh;
-  width: 100vw;
-  padding-right: 10px;
   position: fixed;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 4rem;
+  width: 100vw;
+  background-color: #333333;
   border-bottom: black solid 5px;
 }
 #linkedin-link {
@@ -22,6 +51,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0 25px 0 25px;
   background-color: #555555;
   color: #FFFFFF;
   height: 100vh;
@@ -35,12 +66,18 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   background-color: #A0EEC0;
   background-image: linear-gradient(45deg, #E6ADD8 0%, #ADD8E6 50%, #A0EEC0 100%);
-  height: calc(100vh - 6vh - 50px);
+  min-height: calc(100vh - 6vh - 50px);
   scroll-margin-top: 6vh;
   padding: 25px;
 }
 .navbar-button {
-  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 7.5px 0 7.5px;
+  height: 100%;
+}
+.navbar-button:hover {
+  background-color: #555555;
 }
 .project-tile {
   cursor: pointer;
@@ -56,14 +93,4 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-a {
-  color: #E6ADD8;
-}
-body {
-  margin: 0;
-  padding: 0;
-}
-h2 {
-  color: #E6ADD8;
 }

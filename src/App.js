@@ -45,12 +45,12 @@ function App() {
           <a class="navbar-button" id="github-link"
           href="https://github.com/clarence-de-coder" target="_blank"
           rel="noreferrer">
-            <FontAwesomeIcon icon={["fab", "github-square"]} size="3x"/>
+            <FontAwesomeIcon icon={["fab", "github-square"]} size="2x"/>
           </a>
           <a class="navbar-button" id="linkedin-link"
           href="https://www.linkedin.com/in/clarence-adams-b81b875a/"
           target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={["fab", "linkedin"]} size="3x"/>
+            <FontAwesomeIcon icon={["fab", "linkedin"]} size="2x"/>
           </a>
         </nav>
       </header>
@@ -58,7 +58,7 @@ function App() {
         <div id="welcome-section">
           <h1 id="page-title">Hi, I'm Clarence</h1>
           <p>This is my portfolio of projects</p>
-          <i>currently under development but fully functional <FontAwesomeIcon icon="wrench"/></i>
+          <p><i>currently under development but fully functional <FontAwesomeIcon icon="wrench"/></i></p>
         </div>
         <div id="project-tiles">
           {tiles.map((element, index) =>
