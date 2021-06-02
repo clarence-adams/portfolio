@@ -13,7 +13,7 @@ function App() {
       "id": "small-business",
       "title": "small business",
       "url": "https://slone-heating-and-air.herokuapp.com/"
-    }
+    },
     {
       "id": "calculator",
       "title": "calculator",
