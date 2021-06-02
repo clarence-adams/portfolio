@@ -10,6 +10,11 @@ function App() {
   // array of objects that hold info needed to construct tile components
   const tiles = [
     {
+      "id": "small-business",
+      "title": "small business",
+      "url": "https://slone-heating-and-air.herokuapp.com/"
+    }
+    {
       "id": "calculator",
       "title": "calculator",
       "url": "https://flamboyant-kalam-8ca516.netlify.app/"
