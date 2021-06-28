@@ -98,3 +98,6 @@ p {
   align-items: center;
   text-align: center;
 }
+.tile-screenshot {
+  height: 80%;
+}

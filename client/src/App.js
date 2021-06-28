@@ -12,32 +12,34 @@ function App() {
     {
       "id": "small-business",
       "title": "small business",
-      "url": "https://slone-heating-and-air.herokuapp.com/"
+      "url": "http://www.sloneheatingandair.com",
+      "image": "sloneheatingandair.com"
     },
     {
       "id": "calculator",
       "title": "calculator",
-      "url": "https://flamboyant-kalam-8ca516.netlify.app/"
+      "url": "https://flamboyant-kalam-8ca516.netlify.app",
+      "image": "flamboyant-kalam-8ca516.netlify.app"
     },
     {
       "id": "pomodoro-timer",
       "title": "pomodoro timer",
-      "url": "https://suspicious-noether-2de41b.netlify.app/"
+      "url": "https://suspicious-noether-2de41b.netlify.app"
     },
     {
       "id": "drum-machine",
       "title": "drum machine",
-      "url": "https://happy-curie-b68712.netlify.app/"
+      "url": "https://happy-curie-b68712.netlify.app"
     },
     {
       "id": "random-quote-generator",
       "title": "random quote generator",
-      "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine/"
+      "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine"
     },
     {
       "id": "markdown-previewer",
       "title": "markdown previewer",
-      "url": "https://quizzical-volhard-f6d8e1.netlify.app/"
+      "url": "https://quizzical-volhard-f6d8e1.netlify.app"
     }
   ]
 
@@ -67,7 +69,7 @@ function App() {
         </div>
         <div id="project-tiles">
           {tiles.map((element, index) =>
-            <Tile id={element.id} title={element.title} url={element.url}/>
+            <Tile id={element.id} title={element.title} url={element.url} image={element.image}/>
           )}
         </div>
       </main>
@@ -79,11 +81,15 @@ function Tile(props) {
   const clickHandler = () => {
     window.open(props.url, "_blank")
   }
+
+  const backgroundImage = 'http://localhost:3001/' + props.image + '.png'
+
   return (
     <div id={props.id} class="project-tile" onClick={clickHandler}>
       <header class="tile-header">
         <h2>{props.title}</h2>
       </header>
+      <div class="tile-screenshot" style={{backgroundImage: "url(" + backgroundImage + ")"}}/>
     </div>
   )
 }

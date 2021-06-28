@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/clarence-de-coder/portfolio#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pageres": "^6.2.3"
   }
 }
