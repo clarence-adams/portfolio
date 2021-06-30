@@ -7,6 +7,14 @@ import {faWrench} from '@fortawesome/free-solid-svg-icons'
 library.add(fab, faWrench)
 // app
 function App() {
+  const [port, setPort] = useState(undefined)
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setPort(data.port.toString()));
+  }, []);
+
   // array of objects that hold info needed to construct tile components
   const tiles = [
     {
@@ -69,7 +77,7 @@ function App() {
         </div>
         <div id="project-tiles">
           {tiles.map((element, index) =>
-            <Tile id={element.id} title={element.title} url={element.url} image={element.image}/>
+            <Tile id={element.id} title={element.title} url={element.url} image={element.image} port={port}/>
           )}
         </div>
       </main>
@@ -82,7 +90,7 @@ function Tile(props) {
     window.open(props.url, "_blank")
   }
 
-  const backgroundImage = 'http://localhost:3001/' + props.image + '.png'
+  const backgroundImage = 'http://localhost:' + props.port + '/' + props.image + '.png'
 
   return (
     <div id={props.id} class="project-tile" onClick={clickHandler}>

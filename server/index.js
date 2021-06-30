@@ -21,6 +21,11 @@ app.use(express.static(path.join(__dirname, "/images")));
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
+// api that sends the active port in JSON format when a get request is made
+app.get("/api", (req, res) => {
+  res.json({port: PORT})
+})
+
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
