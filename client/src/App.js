@@ -1,15 +1,17 @@
 import './App.css';
+import {useState, useEffect} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
 import {faWrench} from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
 
 library.add(fab, faWrench)
 // app
 function App() {
   const [port, setPort] = useState(undefined)
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch("/api")
       .then((res) => res.json())
       .then((data) => setPort(data.port.toString()));
