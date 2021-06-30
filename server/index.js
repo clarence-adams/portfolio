@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 (async () => {
-  await new Pageres({delay: 2, filename: "<%= url %>", incrementalName: false})
+  await new Pageres({delay: 2, filename: "<%= url %>", incrementalName: false, 
+  launchOptions: { args: ['--no-sandbox'] }})
     .src("http://www.sloneheatingandair.com", ["450x450"])
     .src("https://flamboyant-kalam-8ca516.netlify.app", ["450x450"])
     .dest(path.join(__dirname, "/images"))
