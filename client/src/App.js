@@ -7,6 +7,7 @@ import {faWrench} from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 
 library.add(fab, faWrench)
+
 // app
 function App() {
   const [port, setPort] = useState(undefined)
@@ -86,13 +87,21 @@ function App() {
     </div>
   );
 }
+
 // project tile component
 function Tile(props) {
+
+  let backgroundImage
+
+  if (props.port == 3001) {
+    backgroundImage = 'http://localhost:' + props.port + '/' + props.image + '.png'
+  } else {
+    backgroundImage = 'https://clarence-adams-portfolio.herokuapp.com/' + props.image + '.png'
+  }
+
   const clickHandler = () => {
     window.open(props.url, "_blank")
   }
-
-  const backgroundImage = 'http://localhost:' + props.port + '/' + props.image + '.png'
 
   return (
     <div id={props.id} class="project-tile" onClick={clickHandler}>
