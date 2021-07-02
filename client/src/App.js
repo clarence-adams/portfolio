@@ -35,22 +35,26 @@ function App() {
     {
       "id": "pomodoro-timer",
       "title": "pomodoro timer",
-      "url": "https://suspicious-noether-2de41b.netlify.app"
+      "url": "https://suspicious-noether-2de41b.netlify.app",
+      "image": "suspicious-noether-2de41b.netlify.app"
     },
     {
       "id": "drum-machine",
       "title": "drum machine",
-      "url": "https://happy-curie-b68712.netlify.app"
+      "url": "https://happy-curie-b68712.netlify.app",
+      "image": "happy-curie-b68712.netlify.app"
     },
     {
       "id": "random-quote-generator",
       "title": "random quote generator",
-      "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine"
+      "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine",
+      "image": "clarence-de-coder.github.io!fcc-random-quote-machine"
     },
     {
       "id": "markdown-previewer",
       "title": "markdown previewer",
-      "url": "https://quizzical-volhard-f6d8e1.netlify.app"
+      "url": "https://quizzical-volhard-f6d8e1.netlify.app",
+      "image": "quizzical-volhard-f6d8e1.netlify.app"
     }
   ]
 
@@ -79,7 +83,7 @@ function App() {
           <p><i>currently under development but fully functional <FontAwesomeIcon icon="wrench"/></i></p>
         </div>
         <div id="project-tiles">
-          {tiles.map((element, index) =>
+          {tiles.map((element) =>
             <Tile id={element.id} title={element.title} url={element.url} image={element.image} port={port}/>
           )}
         </div>
