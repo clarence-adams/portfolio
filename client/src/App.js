@@ -112,7 +112,8 @@ function Tile(props) {
       <header class="tile-header">
         <h2>{props.title}</h2>
       </header>
-      <div class="tile-screenshot" style={{backgroundImage: "url(" + backgroundImage + ")"}}/>
+      <div class="tile-screenshot" style={{backgroundImage: "url(" + backgroundImage + ")", 
+      backgroundSize: 'cover'}}/>
     </div>
   )
 }

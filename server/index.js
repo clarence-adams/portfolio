@@ -7,14 +7,14 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 (async () => {
-  await new Pageres({delay: 2, filename: "<%= url %>", incrementalName: false, 
+  await new Pageres({delay: 2, timeout: 300, filename: "<%= url %>", incrementalName: false, 
   launchOptions: { args: ['--no-sandbox'] }})
-    .src("http://www.sloneheatingandair.com", ["450x450"])
-    .src("https://flamboyant-kalam-8ca516.netlify.app", ["450x450"])
-    .src("https://suspicious-noether-2de41b.netlify.app", ["450x450"])
-    .src("https://happy-curie-b68712.netlify.app", ["450x450"])
-    .src("https://clarence-de-coder.github.io/fcc-random-quote-machine", ["450x450"])
-    .src("https://quizzical-volhard-f6d8e1.netlify.app", ["450x450"])
+    .src("http://www.sloneheatingandair.com", ["800x600"])
+    .src("https://flamboyant-kalam-8ca516.netlify.app", ["800x600"])
+    .src("https://suspicious-noether-2de41b.netlify.app", ["800x600"])
+    .src("https://happy-curie-b68712.netlify.app", ["800x600"])
+    .src("https://clarence-de-coder.github.io/fcc-random-quote-machine", ["800x600"])
+    .src("https://quizzical-volhard-f6d8e1.netlify.app", ["800x600"])
     .dest(path.join(__dirname, "/images"))
     .run();
 })();
