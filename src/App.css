@@ -20,6 +20,7 @@ html, body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  font-weight: 600;
 }
 h1 {
   font-size: 4rem;
@@ -34,6 +35,9 @@ a {
 }
 p {
   font-size: 1.5rem;
+}
+img {
+  object-fit: cover;
 }
 #navbar {
   position: fixed;
@@ -59,8 +63,6 @@ p {
   color: #FFFFFF;
   height: 100vh;
 }
-#page-title {
-}
 #project-tiles {
   display: grid;
   gap: 32px;
@@ -85,7 +87,7 @@ p {
   background-color: #555555;
   border: solid;
   text-align: center;
-  min-height: 300px;
+  height: 300px;
 }
 .tile-header {
   background-color: #333333;
