@@ -111,6 +111,7 @@ function Tile(props) {
         console.log(err)
         document.getElementById(props.id).textContent = `Error: ${err.toString()}`
     })
+  // eslint-disable-next-line
   }, [])
 
   const clickHandler = () => {
