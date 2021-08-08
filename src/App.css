@@ -54,12 +54,10 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  
   background-color: #555555;
   background-image: linear-gradient(45deg, #333333 0%, #555555 100%);
   color: #FFFFFF;
   height: 100vh;
-  border-bottom: black solid 5px;
 }
 #page-title {
 }

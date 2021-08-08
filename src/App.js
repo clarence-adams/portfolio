@@ -97,21 +97,15 @@ function Tile(props) {
 
   let backgroundImage
 
-  if (props.port == 3001) {
-    backgroundImage = 'http://localhost:' + props.port + '/' + props.image + '.png'
-  } else {
-    backgroundImage = 'https://clarence-adams-portfolio.herokuapp.com/' + props.image + '.png'
-  }
-
   const clickHandler = () => {
     window.open(props.url, "_blank")
   }
 
   return (
     <div id={props.id} class="project-tile" onClick={clickHandler}>
-      <header class="tile-header">
+      <div class="tile-header">
         <h2>{props.title}</h2>
-      </header>
+      </div>
       <div class="tile-screenshot" style={{backgroundImage: "url(" + backgroundImage + ")", 
       backgroundSize: 'cover'}}/>
     </div>
