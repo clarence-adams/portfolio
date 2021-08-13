@@ -1,7 +1,7 @@
 const chromium = require('chrome-aws-lambda')
 
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-const handler = async (event, context) => {
+const handler = async (event) => {
   // 
   const pageToScreenshot = JSON.parse(event.body).pageToScreenshot
 

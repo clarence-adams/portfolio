@@ -17,6 +17,7 @@ function App() {
         <nav id='navbar'>
           <a class='navbar-button' href='#welcome-section'>About</a>
           <a class='navbar-button' href='#project-tiles'>Projects</a>
+          <a class='navbar-button' href='#contact'>Contact</a>
           <a class='navbar-button' id='github-link'
           href='https://github.com/clarence-de-coder' target='_blank'
           rel='noreferrer'>
@@ -40,7 +41,36 @@ function App() {
             <Tile id={element.id} title={element.title} url={element.url}/>
           )}
         </div>
+        <div id='contact'>
+          <div className='form-wrapper'>
+            <form id='registration-form'>
+              <div className='form-group'>
+                <h2>Contact Me</h2>
+                <div className='first-form-element'>
+                  <div className='form-label-wrapper'>
+                    <label htmlFor='name'>Name<span className='red-asterisk'> *</span></label>
+                  </div>
+                  <input name='name' id='name' className='contact-input' type='text' required={true}/>
+                </div>
+                <div className='form-element'>
+                  <label htmlFor='email'>Email<span className='red-asterisk'> *</span></label>
+                  <input name='email' id='contact-email' type='email' required={true}/>
+                </div>
+                <div className='form-element'>
+                  <label htmlFor='message'>Message<span className='red-asterisk'> *</span></label>
+                  <textarea name='message' id='contact-message' type='text' required={true}/>
+                </div>
+                <div className='primary-form-actions'>
+                  <button id='contact-form-button' type='button'>Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </main>
+      <footer>
+        <p>Coded by Clarence using React and Netlify</p>
+      </footer>
     </div>
   );
 }
