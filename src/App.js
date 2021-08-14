@@ -1,4 +1,5 @@
 import './App.css';
+import profilePicture from './images/profile.jpg'
 import {React, useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -15,15 +16,15 @@ function App() {
     <div id='app' className='App'>
       <header>
         <nav id='navbar'>
-          <a class='navbar-button' href='#welcome-section'>About</a>
-          <a class='navbar-button' href='#project-tiles'>Projects</a>
-          <a class='navbar-button' href='#contact'>Contact</a>
-          <a class='navbar-button' id='github-link'
+          <a className='navbar-button' href='#welcome-section'>About</a>
+          <a className='navbar-button' href='#project-tiles'>Projects</a>
+          <a className='navbar-button' href='#contact'>Contact</a>
+          <a className='navbar-button' id='github-link'
           href='https://github.com/clarence-de-coder' target='_blank'
           rel='noreferrer'>
             <FontAwesomeIcon icon={['fab', 'github-square']} size='2x'/>
           </a>
-          <a class='navbar-button' id='linkedin-link'
+          <a className='navbar-button' id='linkedin-link'
           href='https://www.linkedin.com/in/clarence-adams-b81b875a/'
           target='_blank' rel='noreferrer'>
             <FontAwesomeIcon icon={['fab', 'linkedin']} size='2x'/>
@@ -32,13 +33,16 @@ function App() {
       </header>
       <main>
         <div id='welcome-section'>
+          <div id='profile-picture-wrapper'>
+            <img id='profile-picture' src={profilePicture} alt="Clarence's face"/>
+          </div>
           <h1 id='page-title'>Hi, I'm Clarence</h1>
           <p>This is my portfolio of projects</p>
           <p><i>currently under development but fully functional <FontAwesomeIcon icon='wrench'/></i></p>
         </div>
         <div id='project-tiles'>
-          {projects.map((element) =>
-            <Tile id={element.id} title={element.title} url={element.url}/>
+          {projects.map((element, index) =>
+            <Tile id={element.id} title={element.title} url={element.url} key={index}/>
           )}
         </div>
         <div id='contact'>
@@ -53,11 +57,15 @@ function App() {
                   <input name='name' id='name' className='contact-input' type='text' required={true}/>
                 </div>
                 <div className='form-element'>
-                  <label htmlFor='email'>Email<span className='red-asterisk'> *</span></label>
+                  <div className='form-label-wrapper'>
+                    <label htmlFor='email'>Email<span className='red-asterisk'> *</span></label>
+                  </div>
                   <input name='email' id='contact-email' type='email' required={true}/>
                 </div>
-                <div className='form-element'>
-                  <label htmlFor='message'>Message<span className='red-asterisk'> *</span></label>
+                <div className='last-form-element'>
+                  <div className='form-label-wrapper'>
+                    <label htmlFor='message'>Message<span className='red-asterisk'> *</span></label>
+                  </div>
                   <textarea name='message' id='contact-message' type='text' required={true}/>
                 </div>
                 <div className='primary-form-actions'>
@@ -117,8 +125,8 @@ function Tile(props) {
   }
 
   return (
-    <div class='project-tile' onClick={clickHandler}>
-      <div class='tile-header'>
+    <div className='project-tile' onClick={clickHandler}>
+      <div className='tile-header'>
         <h2>{props.title}</h2>
       </div>
       <div id={props.id} className='tile-screenshot' style={{backgroundImage: 'url(' + background + ')', backgroundSize: 'cover'}}/>

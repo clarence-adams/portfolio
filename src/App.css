@@ -24,6 +24,7 @@ html, body {
 }
 h1 {
   font-size: 4rem;
+  margin: 24px 0 24px 0;
 }
 h2 {
   color: #E6ADD8;
@@ -65,13 +66,21 @@ footer {
 #welcome-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   background-color: #555555;
   background-image: linear-gradient(45deg, #333333 0%, #555555 100%);
   color: #FFFFFF;
-  height: 100vh;
+  height: calc(100vh - 4rem - 5px);
+  padding: calc(4rem + 5px) 0 0 0;
+  scroll-margin-top: calc(4rem + 5px);
+}
+#profile-picture-wrapper {
+  padding: 24px 0 0 0;
+}
+#profile-picture {
+  width: 20%;
+  border-radius: 100%;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 #project-tiles {
   display: grid;
@@ -79,12 +88,13 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   background-color: #A0EEC0;
   background-image: linear-gradient(45deg, #E6ADD8 0%, #ADD8E6 50%, #A0EEC0 100%);
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100vh - (4rem + 5px));
   scroll-margin-top: 4rem;
   padding: 25px;
 }
 #contact {
-  min-height: calc(100vh - 4rem);
+  /* vh - height of header and footer + border */
+  height: calc(100vh - (8rem + 5px));
   text-align: center;
   background-color: #555555;
   background-image: linear-gradient(45deg, #333333 0%, #555555 100%);
@@ -97,6 +107,9 @@ footer {
 #contact-form {
   flex-direction: column;
 }
+#contact-message {
+  resize: none;
+}
 form {
   display: flex;
   justify-content: center;
@@ -104,15 +117,23 @@ form {
   width: 33.33%;
   background-color: rgb(0, 0, 0, .33);
   border-radius: 1rem;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
-input, select {
+label {
+  color: #fff;
+}
+input, textarea {
   /* width minus border width and padding */
-  width: calc(100% - 12px);
-  padding: 5px 5px 5px 5px;
+  width: calc(100% - (4px + 16px));
+  padding: 8px 8px 8px 8px;
   margin: 0 0 0 0;
   border: 2px #e6add8 solid;
   border-radius: .5rem;
-  background-color: rgb(255, 255, 255, .5);
+  background-color: rgb(0, 0, 0, .15);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
 }
 .form-wrapper {
   display: flex;
@@ -121,26 +142,31 @@ input, select {
   align-items: center;
   width: 100%;
   height: 100%;
-  margin-bottom: 25px;
 }
 .form-group {
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 24px;
   width: 100%;
 }
-.first-form-element, .form-element {
+.first-form-element, .last-form-element, .form-element {
   width: 100%;
   text-align: left;
 }
 .form-element {
-  padding: 1rem 0 0 0;
+  padding: 16px 0 0 0;
 }
 .first-form-element {
   padding: 0;
 }
+.last-form-element {
+  padding: 16px 0 16px 0;
+}
 .form-element-wrapper {
   display: flex;
+}
+.form-label-wrapper {
+  padding: 0 0 8px 0;
 }
 button {
   padding: 8px;
