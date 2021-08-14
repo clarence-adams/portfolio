@@ -37,7 +37,7 @@ function App() {
             <img id='profile-picture' src={profilePicture} alt="Clarence's face"/>
           </div>
           <h1 id='page-title'>Hi, I'm Clarence</h1>
-          <p>This is my portfolio of projects</p>
+          <p>A fullstack web developer</p>
           <p><i>currently under development but fully functional <FontAwesomeIcon icon='wrench'/></i></p>
         </div>
         <div id='project-tiles'>
@@ -49,7 +49,7 @@ function App() {
           <div className='form-wrapper'>
             <form id='registration-form'>
               <div className='form-group'>
-                <h2>Contact Me</h2>
+                <h2 id='contact-header'>Contact Me</h2>
                 <div className='first-form-element'>
                   <div className='form-label-wrapper'>
                     <label htmlFor='name'>Name<span className='red-asterisk'> *</span></label>
@@ -86,6 +86,7 @@ function App() {
 // project tile component
 function Tile(props) {
   const [background, setBackground] = useState()
+  const [text, setText] = useState('Fetching live screenshot...')
 
   function bufferToImageUrl(buffer) {
     // See https://gist.github.com/candycode/f18ae1767b2b0aba568e
@@ -107,15 +108,16 @@ function Tile(props) {
     fetch("/.netlify/functions/take-screenshot", options)
     .then((res) => res.json())
     .then((res) => {
-    if (!res.buffer) return document.getElementById(props.id).textContent = 'Error capturing screenshot'
+    if (!res.buffer) return setText('Error capturing screenshot')
 
       const img = document.createElement('img')
       img.src = bufferToImageUrl(res.buffer.data)
       setBackground(img.src)
+      setText('')
     })
     .catch((err) => {
-        console.log(err)
-        document.getElementById(props.id).textContent = `Error: ${err.toString()}`
+        console.error(err)
+        setText(`Error: ${err.toString()}`)
     })
   // eslint-disable-next-line
   }, [])
@@ -129,7 +131,9 @@ function Tile(props) {
       <div className='tile-header'>
         <h2>{props.title}</h2>
       </div>
-      <div id={props.id} className='tile-screenshot' style={{backgroundImage: 'url(' + background + ')', backgroundSize: 'cover'}}/>
+      <div id={props.id} className='tile-screenshot' style={{backgroundImage: 'url(' + background + ')', backgroundSize: 'cover'}}>
+        {text}
+      </div>
     </div>
   )
 }
