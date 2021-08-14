@@ -178,6 +178,9 @@ input, textarea {
 .form-label-wrapper {
   padding: 0 0 8px 0;
 }
+.red-asterisk {
+  color: #FE2712;
+}
 button {
   padding: 8px;
   border-radius: .5rem;
