@@ -11,6 +11,9 @@
   #navbar {
     height: 3rem !important;
   }
+  .navbar-button {
+    font-size: 1rem !important;
+  }
   #profile-picture {
     width: 50% !important;
   }

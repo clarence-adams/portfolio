@@ -37,7 +37,7 @@ function App() {
             <img id='profile-picture' src={profilePicture} alt="Clarence's face"/>
           </div>
           <h1 id='page-title'>Hi, I'm Clarence</h1>
-          <p>A fullstack web developer</p>
+          <p>A full-stack web developer</p>
           <p><i>currently under development but fully functional <FontAwesomeIcon icon='wrench'/></i></p>
         </div>
         <div id='project-tiles'>
