@@ -1,3 +1,13 @@
+body {
+  /* vh - height of header and footer + border */
+
+  --screen-height: calc(100vh - (4rem + 5px));
+  --screen-height-with-footer: calc(100vh - (8rem + 9px));
+
+  --mobile-screen-height: calc(100vh - (3rem + 5px));
+  --mobile-screen-height-with-footer: calc(100vh - (6rem + 10px));
+}
+
 @media screen and (max-width: 900px) {
   h1 {
     font-size: 2rem !important;
@@ -8,17 +18,27 @@
   p {
     font-size: 1rem !important;
   }
+  #welcome-section {
+    scroll-margin-top: calc(4rem + 5px) !important;
+  }
   #navbar {
     height: 3rem !important;
   }
+  footer {
+    height: 3rem !important;
+  }
   .navbar-button {
-    font-size: 1rem !important;
+    font-size: 1.15rem !important;
   }
   #profile-picture {
     width: 50% !important;
   }
   #project-tiles {
+    min-height:  var(--mobile-screen-height) !important;
     scroll-margin-top: 3rem !important;
+  }
+  #contact {
+    min-height: var(--mobile-screen-height-with-footer) !important;
   }
   form {
     width: 75% !important;
@@ -98,7 +118,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   background-color: #A0EEC0;
   background-image: linear-gradient(45deg, #e6add8 0%, #ADD8E6 50%, #A0EEC0 100%);
-  min-height: calc(100vh - (4rem + 5px));
+  min-height: var(--screen-height);
   scroll-margin-top: 4rem;
   padding: 25px;
 }
@@ -108,7 +128,7 @@ footer {
 }
 #contact {
   /* vh - height of header and footer + border */
-  min-height: calc(100vh - (8rem + 5px));
+  min-height: var(--screen-height-with-footer);
   text-align: center;
   background-color: #555555;
   background-image: linear-gradient(45deg, #333333 0%, #555555 100%);
