@@ -4,11 +4,10 @@ import {useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
-import {faWrench} from '@fortawesome/free-solid-svg-icons'
 // array containing info for project tiles
 const projects = require('./projects.json')
 
-library.add(fab, faWrench)
+library.add(fab)
 
 // app
 function App() {
@@ -82,7 +81,6 @@ function App() {
           </div>
           <h1 id='page-title'>Hi, I'm Clarence</h1>
           <p>A full-stack web developer</p>
-          <p><i>currently under development but fully functional <FontAwesomeIcon icon='wrench'/></i></p>
         </div>
         <div id='project-tiles'>
           {projects.map((element, index) =>
