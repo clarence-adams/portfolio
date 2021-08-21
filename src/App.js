@@ -1,6 +1,6 @@
 import './App.css';
 import profilePicture from './images/profile.jpg'
-import {React, useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
@@ -12,6 +12,50 @@ library.add(fab, faWrench)
 
 // app
 function App() {
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [messageSent, setMessageSent] = useState('')
+  const [inputDisabled, setInputDisabled] = useState(false)
+
+  const nameOnInput = event => setName(event.target.value)
+  const emailOnInput = event => setEmail(event.target.value)
+  const messageOnInput = event => setMessage(event.target.value)
+
+  const sendMessage = async () => {
+
+    const data = {name, email, message}
+    const options = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }
+
+    fetch('.netlify/functions/send-message', options)
+    .then(res => res.json())
+    .then(res => {
+      if (res.message !== 'success') {
+        setMessageSent('failed to send')
+      } else {
+        setMessageSent('sent')
+      }
+      setInputDisabled(true)
+    })
+    .catch(err => (setMessageSent('failed to send')))
+  }
+
+  const ContactFormActions = (props) => {
+    switch(props.messageSent) {
+      case 'sent':
+        return <div id='contact-alert-success'>Message sent!</div>
+      case 'failed to send':
+        return <div id='contact-alert-error'>Message failed to send. Try again later.</div>
+      default:
+        return <button id='contact-form-button' type='button' onClick={sendMessage}>Send Message</button>
+    }
+  }
+
   return (
     <div id='app' className='App'>
       <header>
@@ -54,22 +98,22 @@ function App() {
                   <div className='form-label-wrapper'>
                     <label htmlFor='name'>Name<span className='red-asterisk'> *</span></label>
                   </div>
-                  <input name='name' id='name' className='contact-input' type='text' required={true}/>
+                  <input name='name' id='name' className='contact-input' onInput={nameOnInput} disabled={inputDisabled} type='text' maxLength='100' required={true}/>
                 </div>
                 <div className='form-element'>
                   <div className='form-label-wrapper'>
                     <label htmlFor='email'>Email<span className='red-asterisk'> *</span></label>
                   </div>
-                  <input name='email' id='contact-email' type='email' required={true}/>
+                  <input name='email' id='contact-email' onInput={emailOnInput} disabled={inputDisabled} type='email' maxLength='100' required={true}/>
                 </div>
                 <div className='last-form-element'>
                   <div className='form-label-wrapper'>
                     <label htmlFor='message'>Message<span className='red-asterisk'> *</span></label>
                   </div>
-                  <textarea name='message' id='contact-message' type='text' required={true}/>
+                  <textarea name='message' id='contact-message' onInput={messageOnInput} disabled={inputDisabled} type='text' maxLength='100' required={true}/>
                 </div>
                 <div className='primary-form-actions'>
-                  <button id='contact-form-button' type='button'>Send Message</button>
+                  <ContactFormActions messageSent={messageSent}/>
                 </div>
               </div>
             </form>
