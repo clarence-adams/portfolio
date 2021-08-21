@@ -203,9 +203,6 @@ button:hover {
 button:active {
   transform:scale(.95)
 }
-button:disabled {
-  background-color: red;
-}
 .navbar-button {
   display: flex;
   align-items: center;

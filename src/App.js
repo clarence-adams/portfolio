@@ -27,6 +27,8 @@ function App() {
       return setMessageSent('blank forms')
     }
 
+    setInputDisabled(true)
+
     const data = {name, email, message}
     const options = {
       method: 'POST',
@@ -57,7 +59,7 @@ function App() {
           </>
         )
       default:
-        return <button id='contact-form-button' type='button' onClick={sendMessage}>Send Message</button>
+        return <button id='contact-form-button' type='button' onClick={sendMessage} disabled={setInputDisabled}>Send Message</button>
     }
   }
 
