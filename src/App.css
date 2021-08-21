@@ -235,7 +235,8 @@ button:disabled {
 }
 .primary-form-actions {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 #contact-alert, #contact-alert-success, #contact-alert-error {
   display: flex;
@@ -243,6 +244,7 @@ button:disabled {
   justify-content: center;
   padding: 16px;
   /* width minus border width total and padding total */
+  margin-bottom: 16px;
   width: calc(100% - (32px + 10px));
   /* height: 3rem; */
   border-radius: .5em;

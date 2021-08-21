@@ -23,6 +23,9 @@ function App() {
   const messageOnInput = event => setMessage(event.target.value)
 
   const sendMessage = async () => {
+    if (name === '' || email === '' || message === '') {
+      return setMessageSent('blank forms')
+    }
 
     const data = {name, email, message}
     const options = {
@@ -34,14 +37,10 @@ function App() {
     fetch('.netlify/functions/send-message', options)
     .then(res => res.json())
     .then(res => {
-      if (res.message !== 'success') {
-        setMessageSent('failed to send')
-      } else {
-        setMessageSent('sent')
-      }
+      res.message !== 'success' ? setMessageSent('failed to send') : setMessageSent('sent')
       setInputDisabled(true)
     })
-    .catch(err => (setMessageSent('failed to send')))
+    .catch(err => setMessageSent('failed to send'))
   }
 
   const ContactFormActions = (props) => {
@@ -50,6 +49,13 @@ function App() {
         return <div id='contact-alert-success'>Message sent!</div>
       case 'failed to send':
         return <div id='contact-alert-error'>Message failed to send. Try again later.</div>
+      case 'blank forms':
+        return (
+          <>
+            <div id='contact-alert-error'>Please fill out all forms.</div>
+            <button id='contact-form-button' type='button' onClick={sendMessage}>Send Message</button>
+          </>
+        )
       default:
         return <button id='contact-form-button' type='button' onClick={sendMessage}>Send Message</button>
     }

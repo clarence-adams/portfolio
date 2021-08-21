@@ -23,14 +23,16 @@ const handler = async (event) => {
     + '\n\nmessage: ' + JSON.parse(event.body).message
   }
 
-  try {
-    transporter.sendMail(mailData)
+  const messageSent = await transporter.sendMail(mailData)
+
+  console.log(messageSent)
+
+  if (messageSent.accepted[0] !== null) {
     return {
       statusCode: 200,
       body: JSON.stringify({message: 'success'})
     }
-  } catch (err) {
-    console.error(err)
+  } else {
     return {
       statusCode: 200,
       body: JSON.stringify({message: 'error'})
