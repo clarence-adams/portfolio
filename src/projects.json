@@ -1,4 +1,9 @@
 [{
+  "id": "stock-trading",
+  "title": "stock trading",
+  "url": "https://zen-sammet-07e1df.netlify.app/"
+},
+{
   "id": "small-business",
   "title": "small business",
   "url": "http://www.sloneheatingandair.com"
@@ -22,9 +27,4 @@
   "id": "random-quote-generator",
   "title": "random quote generator",
   "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine"
-},
-{
-  "id": "markdown-previewer",
-  "title": "markdown previewer",
-  "url": "https://quizzical-volhard-f6d8e1.netlify.app"
 }]
