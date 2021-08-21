@@ -59,7 +59,7 @@ function App() {
           </>
         )
       default:
-        return <button id='contact-form-button' type='button' onClick={sendMessage} disabled={setInputDisabled}>Send Message</button>
+        return <button id='contact-form-button' type='button' onClick={sendMessage} disabled={inputDisabled}>Send Message</button>
     }
   }
 
