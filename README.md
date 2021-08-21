@@ -1,6 +1,6 @@
 # Portfolio
 
-https://clarence-adams-portfolio.herokuapp.com/
+https://clarenceadams.dev/
 
 Click on project tiles to see projects I have completed
 
