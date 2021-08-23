@@ -4,10 +4,11 @@ import {useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
+import {faSpinner, faExclamationTriangle, faCode} from '@fortawesome/free-solid-svg-icons'
 // array containing info for project tiles
 const projects = require('./projects.json')
 
-library.add(fab)
+library.add(fab, faSpinner, faExclamationTriangle, faCode)
 
 // app
 function App() {
@@ -87,8 +88,9 @@ function App() {
           <div id='profile-picture-wrapper'>
             <img id='profile-picture' src={profilePicture} alt="Clarence's face"/>
           </div>
-          <h1 id='page-title'>Hi, I'm Clarence</h1>
+          <h1 id='page-title' style={{'margin-bottom': 0}}>Hi, I'm <span className='blue'>Clarence</span></h1>
           <p>A full-stack web developer</p>
+          <FontAwesomeIcon icon={'code'} className='blue' size='2x'/>
         </div>
         <div id='project-tiles'>
           {projects.map((element, index) =>
@@ -127,7 +129,7 @@ function App() {
         </div>
       </main>
       <footer>
-        <p>Coded by Clarence using React and Netlify</p>
+        <p>{ '<> Coded by Clarence using React and Netlify </>' }</p>
       </footer>
     </div>
   );
@@ -136,6 +138,7 @@ function App() {
 // project tile component
 function Tile(props) {
   const [background, setBackground] = useState()
+  const [fetchStatus, setFetchStatus] = useState('loading')
   const [text, setText] = useState('Fetching live screenshot...')
 
   function bufferToImageUrl(buffer) {
@@ -154,20 +157,26 @@ function Tile(props) {
     headers: { "Content-Type": "application/json; charset=utf-8" },
     body: JSON.stringify({pageToScreenshot: props.url})
   }
+
   useEffect(() => {
     fetch("/.netlify/functions/take-screenshot", options)
     .then((res) => res.json())
     .then((res) => {
-    if (!res.buffer) return setText('Error capturing screenshot')
-
-      const img = document.createElement('img')
-      img.src = bufferToImageUrl(res.buffer.data)
-      setBackground(img.src)
-      setText('')
+      if (!res.buffer) {
+        setText('Error capturing live screenshot')
+        setFetchStatus('error')
+      } else {
+        const img = document.createElement('img')
+        img.src = bufferToImageUrl(res.buffer.data)
+        setBackground(img.src)
+        setText('')
+        setFetchStatus('loaded')
+      }
     })
     .catch((err) => {
         console.error(err)
-        setText(`Error: ${err.toString()}`)
+        setText('Error fetching live screenshot')
+        setFetchStatus('error')
     })
   // eslint-disable-next-line
   }, [])
@@ -176,13 +185,24 @@ function Tile(props) {
     window.open(props.url, '_blank')
   }
 
+  const TileContent = () => {
+    switch(fetchStatus) {
+      case 'loaded':
+        return <></>
+      case 'error':
+        return <><FontAwesomeIcon icon={'exclamation-triangle'} size='2x'/><p>{text}</p></>
+      default:
+        return <FontAwesomeIcon className='loading-spinner' icon={'spinner'} size='2x'/>
+    } 
+  }
+
   return (
     <div className='project-tile' onClick={clickHandler}>
       <div className='tile-header'>
         <h2>{props.title}</h2>
       </div>
       <div id={props.id} className='tile-screenshot' style={{backgroundImage: 'url(' + background + ')', backgroundSize: 'cover'}}>
-        {text}
+        <TileContent/>
       </div>
     </div>
   )
