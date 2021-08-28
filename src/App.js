@@ -112,13 +112,13 @@ function App() {
                   <div className='form-label-wrapper'>
                     <label htmlFor='email'>Email<span className='red-asterisk'> *</span></label>
                   </div>
-                  <input name='email' id='contact-email' onInput={emailOnInput} disabled={inputDisabled} type='email' maxLength='100' required={true}/>
+                  <input name='email' id='email' onInput={emailOnInput} disabled={inputDisabled} type='email' maxLength='100' required={true}/>
                 </div>
                 <div className='last-form-element'>
                   <div className='form-label-wrapper'>
                     <label htmlFor='message'>Message<span className='red-asterisk'> *</span></label>
                   </div>
-                  <textarea name='message' id='contact-message' onInput={messageOnInput} disabled={inputDisabled} type='text' maxLength='100' required={true}/>
+                  <textarea name='message' id='message' onInput={messageOnInput} disabled={inputDisabled} type='text' maxLength='100' required={true}/>
                 </div>
                 <div className='primary-form-actions'>
                   <ContactFormActions messageSent={messageSent}/>
