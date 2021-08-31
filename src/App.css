@@ -3,11 +3,11 @@ body {
   --blue-shaded: #5690ba;
 
   /* vh - height of header and footer + border */
-  --screen-height: calc(100vh - (4rem + 5px));
-  --screen-height-with-footer: calc(100vh - (8rem + 9px));
+  --screen-height: calc(100vh - (4rem + 3px));
+  --screen-height-with-footer: calc(100vh - (8rem + 5px));
 
-  --mobile-screen-height: calc(100vh - (3rem + 5px));
-  --mobile-screen-height-with-footer: calc(100vh - (6rem + 10px));
+  --mobile-screen-height: calc(100vh - (3rem + 3px));
+  --mobile-screen-height-with-footer: calc(100vh - (6rem + 6px));
 }
 
 @media screen and (max-width: 900px) {
@@ -124,8 +124,9 @@ button:active {
   height: 4rem;
   width: 100%;
   background-color: #333333;
-  border-bottom: black solid 5px;
+  border-bottom: black solid 3px;
   z-index: 1;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 #linkedin-link {
@@ -276,8 +277,9 @@ h2 {
   flex-direction: column;
 }
 
-#contact-message {
-  resize: none;
+#message {
+  resize: vertical;
+  min-height: 100px;
 }
 
 form {
@@ -398,6 +400,6 @@ footer {
   height: 4rem;
   width: 100%;
   background-color: #333333;
-  border-top: black solid 5px;
+  border-top: black solid 3px;
   color: var(--blue);
 }
