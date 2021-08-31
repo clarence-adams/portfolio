@@ -86,7 +86,7 @@ function App() {
       <main>
         <div id='welcome-section'>
           <div id='profile-picture-wrapper'>
-            <img id='profile-picture' src={profilePicture} alt="Clarence's face"/>
+            <img id='profile-picture' src={profilePicture} alt={'Clarence\'s face'}/>
           </div>
           <h1 id='page-title' style={{'margin-bottom': 0}}>Hi, I'm <span className='blue'>Clarence</span></h1>
           <p>A full-stack web developer</p>
@@ -145,7 +145,7 @@ function Tile(props) {
     // See https://gist.github.com/candycode/f18ae1767b2b0aba568e
 
     var arrayBufferView = new Uint8Array( buffer )
-    var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } )
+    var blob = new Blob( [ arrayBufferView ], { type: 'image/jpeg' } )
     var urlCreator = window.URL || window.webkitURL
     var imageUrl = urlCreator.createObjectURL( blob )
 
@@ -153,13 +153,13 @@ function Tile(props) {
   }
 
   const options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=utf-8" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
     body: JSON.stringify({pageToScreenshot: props.url})
   }
 
   useEffect(() => {
-    fetch("/.netlify/functions/take-screenshot", options)
+    fetch('/.netlify/functions/take-screenshot', options)
     .then((res) => res.json())
     .then((res) => {
       if (!res.buffer) {
@@ -174,7 +174,6 @@ function Tile(props) {
       }
     })
     .catch((err) => {
-        console.error(err)
         setText('Error fetching live screenshot')
         setFetchStatus('error')
     })

@@ -25,8 +25,6 @@ const handler = async (event) => {
 
   const messageSent = await transporter.sendMail(mailData)
 
-  console.log(messageSent)
-
   if (messageSent.accepted[0] !== null) {
     return {
       statusCode: 200,
