@@ -126,11 +126,11 @@ function App() {
               </div>
             </form>
           </div>
+        <footer>
+          <p>Coded by Clarence using React and Netlify</p>
+        </footer>
         </div>
       </main>
-      <footer>
-        <p>Coded by Clarence using React and Netlify</p>
-      </footer>
     </div>
   );
 }
