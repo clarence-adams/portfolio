@@ -126,7 +126,7 @@ export default function Home() {
             </form>
           </div>
         <footer>
-          <p>Coded by Clarence using React and Netlify</p>
+          <p>Coded by Clarence using Next.js and Netlify</p>
         </footer>
         </div>
       </main>
