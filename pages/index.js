@@ -85,9 +85,9 @@ export default function Home() {
       <main>
         <div id='welcome-section'>
           <div id='profile-picture-wrapper'>
-            <Image id='profile-picture' src={profilePicture} alt='Clarence&apos;s face'/>
+            <Image id='profile-picture' src={profilePicture} alt={'Clarence\'s face'}/>
           </div>
-          <h1 id='page-title'>Hi, I'm <span className='blue'>Clarence</span></h1>
+          <h1 id='page-title'>Hi, I&apos;m <span className='blue'>Clarence</span></h1>
           <p>A full-stack web developer</p>
           <FontAwesomeIcon icon={'code'} className='blue' size='2x'/>
         </div>
