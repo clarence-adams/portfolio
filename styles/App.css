@@ -1,4 +1,15 @@
 body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /*
+    variables
+  */
+  
   --blue: #73c2fb;
   --blue-shaded: #5690ba;
 
@@ -8,6 +19,11 @@ body {
 
   --mobile-screen-height: calc(100vh - 3rem);
   --mobile-screen-height-with-footer: calc(100vh - 3rem);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 @media screen and (max-width: 900px) {
@@ -157,7 +173,7 @@ img {
 
 h1 {
   font-size: 4rem;
-  margin: 24px 0 24px 0;
+  margin: 24px 0 0 0;
 }
 
 #welcome-section {
