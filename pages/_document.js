@@ -10,8 +10,12 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <title>Clarence Adams Portfolio</title>
+          <title>Clarence Adams&apos; Portfolio</title>
           <meta name='viewport' content='width=device-width, initial-scale=1'/>
+          <meta
+            name='description'
+            content='Clarence&apos;s portfolio created with next.js'
+          />
         </Head>
         <body>
           <Main />
