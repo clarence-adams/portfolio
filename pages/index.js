@@ -131,7 +131,7 @@ export default function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }
 
 // project tile component
