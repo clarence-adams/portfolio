@@ -1,18 +1,17 @@
-import './App.css';
-import profilePicture from './images/profile.jpg'
+import Head from 'next/head'
+import Image from 'next/image'
+import profilePicture from '../public/profile.jpg'
 import {useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
 import {faSpinner, faExclamationTriangle, faCode} from '@fortawesome/free-solid-svg-icons'
 // array containing info for project tiles
-const projects = require('./projects.json')
+const projects = require('../projects.json')
 
 library.add(fab, faSpinner, faExclamationTriangle, faCode)
 
-// app
-function App() {
-
+export default function Home() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -86,9 +85,9 @@ function App() {
       <main>
         <div id='welcome-section'>
           <div id='profile-picture-wrapper'>
-            <img id='profile-picture' src={profilePicture} alt={'Clarence\'s face'}/>
+            <Image id='profile-picture' src={profilePicture} alt={'Clarence\'s face'}/>
           </div>
-          <h1 id='page-title' style={{'margin-bottom': 0}}>Hi, I'm <span className='blue'>Clarence</span></h1>
+          <h1 id='page-title'>Hi, I&apos;m <span className='blue'>Clarence</span></h1>
           <p>A full-stack web developer</p>
           <FontAwesomeIcon icon={'code'} className='blue' size='2x'/>
         </div>
@@ -127,16 +126,16 @@ function App() {
             </form>
           </div>
         <footer>
-          <p>Coded by Clarence using React and Netlify</p>
+          <p>Coded by Clarence using Next.js and Netlify</p>
         </footer>
         </div>
       </main>
     </div>
-  );
+  )
 }
 
 // project tile component
-function Tile(props) {
+const Tile = (props) => {
   const [background, setBackground] = useState()
   const [fetchStatus, setFetchStatus] = useState('loading')
   const [text, setText] = useState('Fetching live screenshot...')
@@ -159,7 +158,7 @@ function Tile(props) {
   }
 
   useEffect(() => {
-    fetch('/.netlify/functions/take-screenshot', options)
+    fetch('.netlify/functions/take-screenshot/', options)
     .then((res) => res.json())
     .then((res) => {
       if (!res.buffer) {
@@ -206,5 +205,3 @@ function Tile(props) {
     </div>
   )
 }
-
-export default App;
