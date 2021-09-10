@@ -1,7 +1,12 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import profilePicture from '../public/profile.jpg'
 import {useState, useEffect} from 'react'
+// The following import prevents a Font Awesome icon server-side rendering bug,
+// where the icons flash from a very large icon down to a properly sized one:
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import {config} from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; /* eslint-disable import/first */
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
@@ -85,7 +90,12 @@ export default function Home() {
       <main>
         <div id='welcome-section'>
           <div id='profile-picture-wrapper'>
-            <Image id='profile-picture' src={profilePicture} alt={'Clarence\'s face'}/>
+            <Image 
+              id='profile-picture' 
+              src={profilePicture}
+              alt={'Clarence\'s face'}
+              priority={true}
+            />
           </div>
           <h1 id='page-title'>Hi, I&apos;m <span className='blue'>Clarence</span></h1>
           <p>A full-stack web developer</p>
