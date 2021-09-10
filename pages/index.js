@@ -93,7 +93,13 @@ export default function Home() {
         </div>
         <div id='project-tiles'>
           {projects.map((element, index) =>
-            <Tile id={element.id} title={element.title} url={element.url} key={index}/>
+            <Tile 
+              id={element.id} 
+              title={element.title} 
+              url={element.url} 
+              githubUrl={element.githubUrl}
+              key={index}
+            />
           )}
         </div>
         <div id='contact'>
@@ -183,6 +189,11 @@ const Tile = (props) => {
     window.open(props.url, '_blank')
   }
 
+  const githubClickhandler = () => {
+    window.open(props.githubUrl, '_blank')
+    console.log(props.githubUrl)
+  }
+
   const TileContent = () => {
     switch(fetchStatus) {
       case 'loaded':
@@ -195,11 +206,12 @@ const Tile = (props) => {
   }
 
   return (
-    <div className='project-tile' onClick={clickHandler}>
+    <div className='project-tile'>
       <div className='tile-header'>
         <h2>{props.title}</h2>
+        <FontAwesomeIcon className='project-tile-github' onClick={githubClickhandler} icon={['fab', 'github']} size='2x'/>
       </div>
-      <div id={props.id} className='tile-screenshot' style={{backgroundImage: 'url(' + background + ')', backgroundSize: 'cover'}}>
+      <div id={props.id} className='tile-screenshot' onClick={clickHandler} style={{backgroundImage: 'url(' + background + ')', backgroundSize: 'cover'}}>
         <TileContent/>
       </div>
     </div>
