@@ -94,6 +94,7 @@ export default function Home() {
               id='profile-picture' 
               src={profilePicture}
               alt={'Clarence\'s face'}
+              priority={true}
             />
           </div>
           <h1 id='page-title'>Hi, I&apos;m <span className='blue'>Clarence</span></h1>
