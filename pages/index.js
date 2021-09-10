@@ -191,7 +191,6 @@ const Tile = (props) => {
 
   const githubClickhandler = () => {
     window.open(props.githubUrl, '_blank')
-    console.log(props.githubUrl)
   }
 
   const TileContent = () => {
