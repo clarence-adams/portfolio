@@ -109,7 +109,7 @@ export default function Home() {
           <a
             className='navbar-button'
             id='github-link'
-            href='https://github.com/clarence-de-coder'
+            href='https://github.com/clarence-adams'
             target='_blank'
             rel='noreferrer'
           >
