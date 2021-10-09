@@ -1,36 +1,38 @@
-[{
-  "id": "stock-trading",
-  "title": "stock trading",
-  "url": "https://zen-sammet-07e1df.netlify.app/",
-  "githubUrl": "https://github.com/clarence-de-coder/stox"
-},
-{
-  "id": "small-business",
-  "title": "small business",
-  "url": "http://www.sloneheatingandair.com",
-  "githubUrl": "https://github.com/clarence-de-coder/slone-heating-and-air"
-},
-{
-  "id": "calculator",
-  "title": "calculator",
-  "url": "https://flamboyant-kalam-8ca516.netlify.app",
-  "githubUrl": "https://github.com/clarence-de-coder/fcc-calculator"
-},
-{
-  "id": "pomodoro-timer",
-  "title": "pomodoro timer",
-  "url": "https://suspicious-noether-2de41b.netlify.app",
-  "githubUrl": "https://github.com/clarence-de-coder/fcc-clock"
-},
-{
-  "id": "drum-machine",
-  "title": "drum machine",
-  "url": "https://happy-curie-b68712.netlify.app",
-  "githubUrl": "https://github.com/clarence-de-coder/fcc-drum-machine"
-},
-{
-  "id": "random-quote",
-  "title": "random quote",
-  "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine",
-  "githubUrl": "https://github.com/clarence-de-coder/fcc-random-quote-machine"
-}]
+[
+  {
+    "id": "stock-trading",
+    "title": "stock trading",
+    "url": "https://zen-sammet-07e1df.netlify.app/",
+    "githubUrl": "https://github.com/clarence-de-coder/stox"
+  },
+  {
+    "id": "small-business",
+    "title": "small business",
+    "url": "http://www.sloneheatingandair.com",
+    "githubUrl": "https://github.com/clarence-de-coder/slone-heating-and-air"
+  },
+  {
+    "id": "calculator",
+    "title": "calculator",
+    "url": "https://flamboyant-kalam-8ca516.netlify.app",
+    "githubUrl": "https://github.com/clarence-de-coder/fcc-calculator"
+  },
+  {
+    "id": "pomodoro-timer",
+    "title": "pomodoro timer",
+    "url": "https://suspicious-noether-2de41b.netlify.app",
+    "githubUrl": "https://github.com/clarence-de-coder/fcc-clock"
+  },
+  {
+    "id": "drum-machine",
+    "title": "drum machine",
+    "url": "https://happy-curie-b68712.netlify.app",
+    "githubUrl": "https://github.com/clarence-de-coder/fcc-drum-machine"
+  },
+  {
+    "id": "random-quote",
+    "title": "random quote",
+    "url": "https://clarence-de-coder.github.io/fcc-random-quote-machine",
+    "githubUrl": "https://github.com/clarence-de-coder/fcc-random-quote-machine"
+  }
+]

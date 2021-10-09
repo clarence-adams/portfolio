@@ -9,7 +9,7 @@ body {
   /*
     variables
   */
-  
+
   --blue: #73c2fb;
   --blue-shaded: #5690ba;
 
@@ -60,7 +60,7 @@ code {
   }
 
   #project-tiles {
-    min-height:  var(--mobile-screen-height) !important;
+    min-height: var(--mobile-screen-height) !important;
     scroll-margin-top: 3rem !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
   }
@@ -81,7 +81,8 @@ code {
 
 */
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
@@ -109,7 +110,7 @@ p {
 
 button {
   padding: 8px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
   color: #000;
@@ -124,7 +125,7 @@ button:hover {
 }
 
 button:active {
-  transform:scale(.95)
+  transform: scale(0.95);
 }
 
 /*
@@ -183,7 +184,7 @@ h1 {
   align-items: center;
   background-color: #555555;
   background-image: linear-gradient(45deg, #333333 0%, #555555 100%);
-  color: #FFFFFF;
+  color: #ffffff;
   min-height: var(--screen-height);
   padding: calc(4rem + 5px) 8px 0 8px;
   scroll-margin-top: calc(4rem + 5px);
@@ -198,7 +199,6 @@ h1 {
   width: 20%;
   border-radius: 100%;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-
 }
 
 /*
@@ -215,8 +215,13 @@ h2 {
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #A0EEC0;
-  background-image: linear-gradient(45deg, #e6add8 0%, #ADD8E6 50%, #A0EEC0 100%);
+  background-color: #a0eec0;
+  background-image: linear-gradient(
+    45deg,
+    #e6add8 0%,
+    #add8e6 50%,
+    #a0eec0 100%
+  );
   min-height: var(--screen-height);
   scroll-margin-top: 4rem;
   padding: 25px;
@@ -264,15 +269,15 @@ h2 {
   animation-name: spin;
   animation-duration: 2000ms;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
 }
 
 @keyframes spin {
   from {
-    transform:rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -295,7 +300,7 @@ h2 {
   min-height: var(--screen-height-with-footer);
 }
 
-#contact>h2 {
+#contact > h2 {
   margin: auto;
   color: #fff;
 }
@@ -319,7 +324,7 @@ form {
   padding: 24px;
   margin: 24px;
   width: 33.33%;
-  background-color: rgb(0, 0, 0, .33);
+  background-color: rgb(0, 0, 0, 0.33);
   border-radius: 1rem;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
@@ -328,14 +333,15 @@ label {
   color: #fff;
 }
 
-input, textarea {
+input,
+textarea {
   /* width minus border width and padding */
   width: calc(100% - (4px + 16px));
   padding: 8px 8px 8px 8px;
   margin: 0 0 0 0;
   border: 2px #73c2fb solid;
-  border-radius: .5rem;
-  background-color: rgb(0, 0, 0, .15);
+  border-radius: 0.5rem;
+  background-color: rgb(0, 0, 0, 0.15);
   color: #fff;
   font-family: inherit;
   font-weight: 600;
@@ -358,7 +364,9 @@ input, textarea {
   width: 100%;
 }
 
-.first-form-element, .last-form-element, .form-element {
+.first-form-element,
+.last-form-element,
+.form-element {
   width: 100%;
   text-align: left;
 }
@@ -393,14 +401,16 @@ input, textarea {
   align-items: center;
 }
 
-#contact-alert, #contact-alert-success, #contact-alert-error {
+#contact-alert,
+#contact-alert-success,
+#contact-alert-error {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
   margin-bottom: 16px;
   width: calc(100% - (32px + 10px));
-  border-radius: .5em;
+  border-radius: 0.5em;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
