@@ -118,7 +118,7 @@ export default function Home() {
           <a
             className='navbar-button'
             id='linkedin-link'
-            href='https://www.linkedin.com/in/clarence-adams-b81b875a/'
+            href='https://www.linkedin.com/in/clarence-adams'
             target='_blank'
             rel='noreferrer'
           >
