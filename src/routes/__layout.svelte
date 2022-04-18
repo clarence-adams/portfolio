@@ -1,6 +1,6 @@
 <script>
 	import Header from '$lib/Header.svelte';
-	import Footer from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
 	import '../app.css';
 </script>
 
@@ -14,10 +14,9 @@
 
 <style>
 	main {
-		position: absolute;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+		padding: 4rem;
 		width: 100%;
 		min-height: calc(100vh - var(--header-height));
 		background-color: var(--main-background);

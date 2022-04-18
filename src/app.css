@@ -14,3 +14,18 @@
 
 	--header-height: 4rem;
 }
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+	color: var(--white);
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 600;
+}
