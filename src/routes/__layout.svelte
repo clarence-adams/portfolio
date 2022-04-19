@@ -16,6 +16,7 @@
 	main {
 		display: flex;
 		flex-direction: column;
+		gap: 4rem;
 		padding: 4rem;
 		width: 100%;
 		min-height: calc(100vh - var(--header-height));

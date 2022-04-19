@@ -27,12 +27,15 @@
 		height: 100%;
 	}
 	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-size: 1.5rem;
 		font-weight: 600;
 		height: var(--header-height);
 	}
 	a:hover {
-		margin-bottom: -4px;
+		padding-top: 4px;
 		border-bottom: 4px solid var(--magenta);
 	}
 	#name {

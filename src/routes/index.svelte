@@ -1,3 +1,10 @@
+<script>
+	import about from '../about.json';
+	import projects from '../projects.json';
+	import About from '$lib/About.svelte';
+	import Project from '$lib/Project.svelte';
+</script>
+
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
@@ -19,23 +26,46 @@
 
 <!-- About -->
 
+<section id="about">
+	{#each about as about}
+		<About {about} />
+	{/each}
+</section>
+
 <!-- Projects -->
+
+<section id="projects">
+	{#each projects as project}
+		<Project {project} />
+	{/each}
+</section>
 
 <!-- Contact -->
 <style>
+	section {
+		scroll-margin-top: var(--header-height);
+	}
 	hr {
 		height: 0px;
 		border: 1px solid var(--red);
 		margin: 1rem 0;
 	}
 	#image-placeholder {
+		--img-circle-radius: 150px;
 		float: left;
 		flex-shrink: 0;
 		border-radius: 100%;
 		width: 300px;
 		height: 300px;
-		margin: 0 2rem 4rem 0;
+		margin-right: 2rem;
 		background-color: #666;
 		shape-outside: circle(175px at 150px 150px);
+	}
+	#about,
+	#projects {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 4rem;
 	}
 </style>

@@ -1,0 +1,30 @@
+[
+	{
+		"id": "stock-trading",
+		"title": "Stox",
+		"description": "Stox is a stock trading web app that you can use to trade fake stocks. It uses the [INSERT API] to fetch real time stock data!",
+		"url": "https://zen-sammet-07e1df.netlify.app/",
+		"githubUrl": "https://github.com/clarence-adams/stox"
+	},
+	{
+		"id": "small-business",
+		"title": "Slone Heating & Air",
+		"description": "Slone Heating & Air is a brochure site for a HVAC company in Lexington KY.",
+		"url": "http://www.sloneheatingandair.com",
+		"githubUrl": "https://github.com/clarence-adams/slone-heating-and-air"
+	},
+	{
+		"id": "calculator",
+		"title": "Calculator",
+		"description": "A simple javascript calculator built using React.",
+		"url": "https://flamboyant-kalam-8ca516.netlify.app",
+		"githubUrl": "https://github.com/clarence-adams/fcc-calculator"
+	},
+	{
+		"id": "pomodoro-timer",
+		"title": "Pomodoro Timer",
+		"description": "A functional Pomodoro timer built using React you can use to split up your working day between work blocks and rest blocks",
+		"url": "https://suspicious-noether-2de41b.netlify.app",
+		"githubUrl": "https://github.com/clarence-adams/fcc-clock"
+	}
+]
