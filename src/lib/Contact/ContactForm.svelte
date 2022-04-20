@@ -17,18 +17,6 @@
 </form>
 
 <style>
-	form {
-		position: relative;
-		left: 50%;
-		transform: translate(-50%, 0);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 24rem;
-		padding: 2rem;
-		border: 2px solid var(--blue);
-	}
 	fieldset {
 		display: flex;
 		flex-direction: column;
@@ -39,6 +27,9 @@
 		width: 100%;
 		margin-bottom: 0.25rem;
 		align-self: left;
+	}
+	textarea {
+		min-height: 8rem;
 	}
 	label,
 	input {

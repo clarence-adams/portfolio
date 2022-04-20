@@ -23,7 +23,7 @@
 	}
 	.project-tile {
 		padding: 1rem;
-		border: 2px solid var(--magenta);
+		border: 2px solid var(--green);
 	}
 	.project-header {
 		display: flex;
@@ -31,7 +31,7 @@
 		align-items: center;
 		padding-bottom: 1rem;
 		margin-bottom: 1rem;
-		border-bottom: 2px solid var(--magenta);
+		border-bottom: 2px solid var(--green);
 	}
 	.bi-github {
 		fill: var(--white);

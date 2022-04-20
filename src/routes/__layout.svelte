@@ -17,7 +17,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 8rem;
-		padding: 4rem;
+		padding: 0 4rem;
 		width: 100%;
 		min-height: calc(100vh - var(--header-height));
 		background-color: var(--main-background);

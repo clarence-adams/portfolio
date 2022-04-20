@@ -3,7 +3,12 @@
 	import projects from '../projects.json';
 	import About from '$lib/About.svelte';
 	import Project from '$lib/Project.svelte';
-	import Contact from '$lib/Contact.svelte';
+	import ContactDetails from '$lib/Contact/ContactDetails.svelte';
+	import ContactForm from '$lib/Contact/ContactForm.svelte';
+
+	const email = 'clarence.e.a@gmail.com';
+	const github = 'github.com/clarence-adams';
+	const linkedin = 'linkedin.com/in/clarence-adams';
 </script>
 
 <svelte:head>
@@ -28,7 +33,6 @@
 <!-- About -->
 
 <section id="about">
-	<h2>About</h2>
 	<div class="tiles">
 		{#each about as about}
 			<About {about} />
@@ -39,7 +43,6 @@
 <!-- Projects -->
 
 <section id="projects">
-	<h2>Projects</h2>
 	<div class="tiles">
 		{#each projects as project}
 			<Project {project} />
@@ -49,12 +52,16 @@
 
 <!-- Contact -->
 <section id="contact">
-	<h2>Contact</h2>
-	<Contact />
+	<div id="contact-wrapper">
+		<ContactDetails {email} {github} {linkedin} />
+		<ContactForm />
+	</div>
 </section>
 
 <style>
 	section {
+		min-height: calc(100vh - var(--header-height));
+		padding: 4rem 0;
 		scroll-margin-top: var(--header-height);
 	}
 	h2 {
@@ -68,6 +75,18 @@
 		height: 0px;
 		border: 1px solid var(--red);
 		margin: 1rem 0;
+	}
+	#contact-wrapper {
+		position: relative;
+		left: 50%;
+		transform: translate(-50%, 0);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 24rem;
+		padding: 2rem;
+		border: 2px solid var(--blue);
 	}
 	#image-placeholder {
 		--img-circle-radius: 150px;

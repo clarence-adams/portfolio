@@ -19,10 +19,10 @@
 		font-weight: 600;
 		padding-bottom: 1rem;
 		margin-bottom: 1rem;
-		border-bottom: 2px solid var(--magenta);
+		border-bottom: 2px solid var(--red);
 	}
 	.about-tile {
 		padding: 1rem;
-		border: 2px solid var(--magenta);
+		border: 2px solid var(--red);
 	}
 </style>
