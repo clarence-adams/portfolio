@@ -2,7 +2,7 @@
 	{
 		"id": "stock-trading",
 		"title": "Stox",
-		"description": "Stox is a stock trading web app that you can use to trade fake stocks. It uses the [INSERT API] to fetch real time stock data!",
+		"description": "Stox is a stock trading web app that you can use to trade fake stocks. It uses the IEX cloud API to fetch real time stock data!",
 		"url": "https://zen-sammet-07e1df.netlify.app/",
 		"githubUrl": "https://github.com/clarence-adams/stox"
 	},

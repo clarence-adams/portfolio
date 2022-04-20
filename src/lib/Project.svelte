@@ -4,7 +4,7 @@
 
 <div class="project-tile">
 	<div class="project-header">
-		<h2>{project.title}</h2>
+		<h3>{project.title}</h3>
 		<a href={project.url} target="_blank">
 			<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-github" viewBox="0 0 16 16">
 				<path
@@ -17,13 +17,13 @@
 </div>
 
 <style>
-	h2 {
+	h3 {
 		font-size: 1.5rem;
 		font-weight: 600;
 	}
 	.project-tile {
 		padding: 1rem;
-		border: 2px solid var(--cyan);
+		border: 2px solid var(--magenta);
 	}
 	.project-header {
 		display: flex;
@@ -31,7 +31,7 @@
 		align-items: center;
 		padding-bottom: 1rem;
 		margin-bottom: 1rem;
-		border-bottom: 2px solid var(--cyan);
+		border-bottom: 2px solid var(--magenta);
 	}
 	.bi-github {
 		fill: var(--white);

@@ -3,7 +3,7 @@
 </script>
 
 <div class="about-tile">
-	<h2>{about.header}</h2>
+	<h3>{about.header}</h3>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit sed vulputate.
@@ -14,7 +14,7 @@
 </div>
 
 <style>
-	h2 {
+	h3 {
 		font-size: 1.5rem;
 		font-weight: 600;
 		padding-bottom: 1rem;
