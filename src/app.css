@@ -1,5 +1,7 @@
 @import '@fontsource/fira-mono';
-@import 'preflight.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
 	--red: #f7768e;
@@ -12,9 +14,6 @@
 	--white: #c0caf5;
 	--pure-white: #ffffff;
 
-	--header-background: #24283b;
-	--main-background: #1a1b26;
-
 	--header-height: 4rem;
 }
 
@@ -26,13 +25,19 @@ h1,
 h2,
 h3,
 h4,
-p,
 a,
-li {
+p,
+li,
+label,
+textarea {
+	font-weight: 500;
 	color: var(--white);
 }
-
-h1 {
-	font-size: 2rem;
-	font-weight: 600;
+a {
+	color: var(--magenta);
+}
+a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-color: var(--red);
 }

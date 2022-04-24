@@ -1,13 +1,13 @@
 [
 	{
-		"id": "stock-trading",
+		"id": "stox",
 		"title": "Stox",
-		"description": "Stox is a stock trading web app that you can use to trade fake stocks. It uses the IEX cloud API to fetch real time stock data!",
+		"description": "Stox is a stock trading web app that you can use to trade fake stocks. It uses the IEX cloud API to fetch real time stock data and features form validation for sign up.",
 		"url": "https://zen-sammet-07e1df.netlify.app/",
 		"githubUrl": "https://github.com/clarence-adams/stox"
 	},
 	{
-		"id": "small-business",
+		"id": "slone",
 		"title": "Slone Heating & Air",
 		"description": "Slone Heating & Air is a brochure site for a HVAC company in Lexington KY.",
 		"url": "http://www.sloneheatingandair.com",
@@ -21,7 +21,7 @@
 		"githubUrl": "https://github.com/clarence-adams/fcc-calculator"
 	},
 	{
-		"id": "pomodoro-timer",
+		"id": "pomodoro",
 		"title": "Pomodoro Timer",
 		"description": "A functional Pomodoro timer built using React you can use to split up your working day between work blocks and rest blocks",
 		"url": "https://suspicious-noether-2de41b.netlify.app",

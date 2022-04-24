@@ -1,9 +1,10 @@
 <script>
+	import H2 from '$lib/H2.svelte';
 	export let about;
 </script>
 
-<div class="about-tile">
-	<h3>{about.header}</h3>
+<div class="p-4 border-2 border-red">
+	<H2 border="red">{about.header}</H2>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit sed vulputate.
@@ -12,17 +13,3 @@
 		Praesent elementum facilisis leo vel fringilla.
 	</p>
 </div>
-
-<style>
-	h3 {
-		font-size: 1.5rem;
-		font-weight: 600;
-		padding-bottom: 1rem;
-		margin-bottom: 1rem;
-		border-bottom: 2px solid var(--red);
-	}
-	.about-tile {
-		padding: 1rem;
-		border: 2px solid var(--red);
-	}
-</style>

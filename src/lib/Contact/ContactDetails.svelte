@@ -40,5 +40,6 @@
 		width: 16px;
 		height: 16px;
 		fill: var(--white);
+		transform: translate(0, 1px);
 	}
 </style>

@@ -1,8 +1,17 @@
-<header>
-	<p id="name">Clarence Adams</p>
-	<nav>
-		<ul id="nav-list">
-			<a href="#about">About</a>
+<script>
+	let windowWidth;
+</script>
+
+<svelte:window bind:innerWidth={windowWidth} />
+
+<header class="flex justify-between items-center px-20 bg-storm z-50">
+	{#if windowWidth > 800}
+		<p class="text-3xl font-semibold text-magenta">Clarence Adams</p>
+	{/if}
+	<nav class="flex items-center h-full">
+		<ul class="flex gap-8">
+			<a href="#landing">About</a>
+			<a href="#skills">Skills</a>
 			<a href="#projects">Projects</a>
 			<a href="#contact">Contact</a>
 		</ul>
@@ -14,19 +23,10 @@
 		position: sticky;
 		top: 0;
 		left: 0;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 		height: var(--header-height);
-		padding: 0 4rem;
-		background-color: var(--header-background);
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		height: 100%;
 	}
 	a {
+		color: var(--white);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -37,14 +37,23 @@
 	a:hover {
 		padding-top: 4px;
 		border-bottom: 4px solid var(--magenta);
+		text-decoration: none;
 	}
-	#name {
-		font-size: 2rem;
-		font-weight: 600;
-		color: var(--magenta);
+
+	@media (max-width: 800px) {
+		header {
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			justify-content: flex-end;
+			width: 100%;
+		}
 	}
-	#nav-list {
-		display: flex;
-		gap: 2rem;
+
+	@media (max-width: 450px) {
+		header {
+			justify-content: center;
+			padding: 0 2rem;
+		}
 	}
 </style>

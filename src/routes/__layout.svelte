@@ -6,7 +6,7 @@
 
 <Header />
 
-<main>
+<main class="flex flex-col gap-32 w-full p-8 bg-night sm:p-16 ">
 	<slot />
 </main>
 
@@ -14,12 +14,6 @@
 
 <style>
 	main {
-		display: flex;
-		flex-direction: column;
-		gap: 8rem;
-		padding: 0 4rem;
-		width: 100%;
 		min-height: calc(100vh - var(--header-height));
-		background-color: var(--main-background);
 	}
 </style>
