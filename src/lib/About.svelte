@@ -1,5 +1,5 @@
 <script>
-	import H2 from '$lib/H2.svelte';
+	import H2 from '$lib/tags/H2.svelte';
 	export let about;
 </script>
 

@@ -1,12 +1,12 @@
 <script>
-	import Header from '$lib/Header.svelte';
-	import Footer from '$lib/Footer.svelte';
+	import Header from '$lib/tags/Header.svelte';
+	import Footer from '$lib/tags/Footer.svelte';
 	import '../app.css';
 </script>
 
 <Header />
 
-<main class="flex flex-col gap-32 w-full p-8 bg-night sm:p-16 ">
+<main class="flex flex-col gap-32 w-full px-8 pt-8 bg-night sm:px-16 sm:pt-16">
 	<slot />
 </main>
 

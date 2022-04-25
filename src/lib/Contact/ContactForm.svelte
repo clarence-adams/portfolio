@@ -1,5 +1,5 @@
 <script>
-	import Button from '$lib/Button.svelte';
+	import Button from '$lib/tags/Button.svelte';
 	const formHandler = () => {
 		console.log('Form submitted');
 	};

@@ -33,11 +33,3 @@ textarea {
 	font-weight: 500;
 	color: var(--white);
 }
-a {
-	color: var(--magenta);
-}
-a:hover {
-	text-decoration: underline;
-	text-decoration-thickness: 2px;
-	text-decoration-color: var(--red);
-}

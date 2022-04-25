@@ -1,7 +1,7 @@
 <script>
 	import about from '../about.json';
 	import projects from '../projects.json';
-	import Section from '$lib/Section.svelte';
+	import Section from '$lib/tags/Section.svelte';
 	import About from '$lib/About.svelte';
 	import Project from '$lib/Project.svelte';
 	import Contact from '$lib/Contact/Contact.svelte';
@@ -18,7 +18,7 @@
 <!-- Landing -->
 <Section id="landing">
 	<!-- background pattern -->
-	<div id="landing-background" class="absolute top-0 left-0 w-full z-0">
+	<div id="landing-background" class="absolute top-0 left-0 w-full z-0 md:top-16">
 		<svg width="100%" height="100%">
 			<defs>
 				<pattern id="Pattern" patternUnits="userSpaceOnUse" x="16" y="16" width="32" height="32">
@@ -29,12 +29,12 @@
 		</svg>
 	</div>
 	<!-- content -->
-	<div class="relative flex flex-col justify-start items-center z-10 md:flex-none">
+	<div class="relative flex flex-col justify-start items-center z-10 md:block">
 		<img
 			src="/profile.jpg"
 			alt=""
 			id="profile-img"
-			class="float-none w-[250px] h-[250px] m-0 rounded-full shadow-inner sm:w-[300px] sm:h-[300px] md:mr-8 md:float-left"
+			class="float-none w-[250px] h-[250px] mb-8 mr-0 rounded-full shadow-inner sm:w-[300px] sm:h-[300px] md:mr-8 md:float-left"
 		/>
 		<h1 class="text-5xl font-bold text-center md:text-left">
 			Hello! I'm Clarence, a full stack developer.
@@ -80,7 +80,6 @@
 
 <style>
 	#landing-background {
-		top: var(--header-height);
 		height: calc(100% - var(--header-height));
 	}
 	#profile-img {

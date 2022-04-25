@@ -4,7 +4,11 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<header class="flex justify-between items-center px-20 bg-storm z-50">
+<header
+	class="fixed top-auto bottom-0 flex justify-end items-center w-full 
+	h-16 px-20 bg-storm z-50 sm:justify-center md:sticky md:top-0 
+	md:bottom-auto md:justify-between"
+>
 	{#if windowWidth > 800}
 		<p class="text-3xl font-semibold text-magenta">Clarence Adams</p>
 	{/if}
@@ -19,12 +23,6 @@
 </header>
 
 <style>
-	header {
-		position: sticky;
-		top: 0;
-		left: 0;
-		height: var(--header-height);
-	}
 	a {
 		color: var(--white);
 		display: flex;
@@ -38,22 +36,5 @@
 		padding-top: 4px;
 		border-bottom: 4px solid var(--magenta);
 		text-decoration: none;
-	}
-
-	@media (max-width: 800px) {
-		header {
-			position: fixed;
-			top: auto;
-			bottom: 0;
-			justify-content: flex-end;
-			width: 100%;
-		}
-	}
-
-	@media (max-width: 450px) {
-		header {
-			justify-content: center;
-			padding: 0 2rem;
-		}
 	}
 </style>
