@@ -1,6 +1,7 @@
 <script>
 	import about from '../about.json';
 	import projects from '../projects.json';
+	import A from '$lib/tags/A.svelte';
 	import Section from '$lib/tags/Section.svelte';
 	import About from '$lib/About.svelte';
 	import Project from '$lib/Project.svelte';
@@ -42,13 +43,16 @@
 		<hr class="w-full h-0.5 my-4 bg-red border-0 md:w-auto" />
 		<p>
 			Welcome to my personal portfolio! Below you'll find some useful (and not very useful)
-			information about me as well as some of the projects I've done. This site was built using <a
-				href="https://kit.svelte.dev/"
-				target="_blank">SvelteKit</a
-			>, <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> and hosted on
-			<a href="https://vercel.com" target="_blank">Vercel</a>. The nice color scheme comes from my
+			information about me as well as some of the projects I've done. <A
+				href="https://github.com/clarence-adams/portfolio"
+				target="_blank">This site</A
+			> was built using <A href="https://kit.svelte.dev/" target="_blank">SvelteKit</A>, <A
+				href="https://tailwindcss.com/"
+				target="_blank">TailwindCSS</A
+			> and hosted on
+			<A href="https://vercel.com" target="_blank">Vercel</A>. The nice color scheme comes from my
 			favorite VS Code theme
-			<a href="https://github.com/enkia/tokyo-night-vscode-theme" target="_blank">Tokyo Night</a>.
+			<A href="https://github.com/enkia/tokyo-night-vscode-theme" target="_blank">Tokyo Night</A>.
 		</p>
 	</div>
 </Section>

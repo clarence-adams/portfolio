@@ -4,16 +4,25 @@
 	export let project;
 
 	let yTranslate = spring(0);
-	$: style = `transform: translate(0, ${$yTranslate}px);`;
+	let scale = spring(1);
+
+	$: style = `transform: translate(0, ${$yTranslate}px) scale(${$scale})`;
 </script>
 
 <a
 	href={project.url}
 	target="_blank"
-	on:mouseenter={() => yTranslate.set(-15)}
-	on:mouseleave={() => yTranslate.set(0)}
+	on:mouseenter={() => {
+		yTranslate.set(-15);
+		scale.set(1.01);
+	}}
+	on:mouseleave={() => {
+		yTranslate.set(0);
+		scale.set(1);
+	}}
 	{style}
-	class="flex flex-col justify-between gap-4 p-4 border-2 border-green no-underline"
+	class="flex flex-col justify-between gap-4 p-4 border-2 border-green 
+	no-underline active:bg-storm"
 >
 	<div>
 		<div
