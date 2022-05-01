@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import Header from '$lib/tags/Header.svelte';
 	import Footer from '$lib/tags/Footer.svelte';
