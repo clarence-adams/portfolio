@@ -58,7 +58,7 @@
 			id="profile-img"
 			class="float-none w-[250px] h-[250px] mb-8 mr-0 rounded-full shadow-inner sm:w-[300px] sm:h-[300px] md:mb-0 md:mr-8 md:float-left"
 		/>
-		<h1 class="text-4xl font-bold text-center md:text-left md:text-5xl">
+		<h1 class="text-3xl font-bold text-left sm:text-4xl md:text-5xl">
 			Hello! I'm Clarence, a full stack developer.
 		</h1>
 		<hr class="w-full h-0.5 my-4 bg-red border-0 md:w-auto" />
