@@ -41,7 +41,7 @@
 	<!-- background pattern -->
 	<div
 		style={`height: calc(${landingHeight}px + 8rem)`}
-		class="absolute top-[-4rem] left-[-4rem] w-screen z-0 2xl:left-[-16rem]"
+		class="absolute top-[-4rem] left-[-2rem] w-screen z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
 	>
 		<SvgPattern />
 	</div>
@@ -92,7 +92,9 @@
 			<Skill {skill} />
 		{/each}
 	</div>
-	<div class="absolute bottom-[-7rem] left-[-4rem] w-screen h-24 z-0 2xl:left-[-16rem]">
+	<div
+		class="absolute bottom-[-7rem] left-[-2rem] w-screen h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
+	>
 		<SvgPattern />
 	</div>
 </Section>
@@ -105,7 +107,9 @@
 			<Project {project} />
 		{/each}
 	</div>
-	<div class="absolute bottom-[-7rem] left-[-4rem] w-screen h-24 z-0 2xl:left-[-16rem]">
+	<div
+		class="absolute bottom-[-7rem] left-[-2rem] w-screen h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
+	>
 		<SvgPattern />
 	</div>
 </Section>
