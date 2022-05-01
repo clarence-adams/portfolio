@@ -3,7 +3,7 @@
 </script>
 
 <script>
-	import Header from '$lib/tags/Header.svelte';
+	import Header from '$lib/Header/Header.svelte';
 	import Footer from '$lib/tags/Footer.svelte';
 	import '../app.css';
 </script>

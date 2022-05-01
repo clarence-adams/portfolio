@@ -12,7 +12,8 @@
 	let formRect;
 	let formWidth;
 	let formButton;
-
+	let formIncomplete = false;
+	let disabled = false;
 	// inputs
 	let inputs = ['name', 'email'];
 
@@ -22,7 +23,6 @@
 	let buttonWidth;
 	let buttonSpring;
 	let buttonText = 'Send Message';
-	let disabled = false;
 
 	// loading bar
 	let loadingBarWrapper;
@@ -52,6 +52,15 @@
 	const formHandler = (e) => {
 		const formData = new FormData(form);
 
+		const name = formData.get('name');
+		const email = formData.get('email');
+		const message = formData.get('message');
+
+		if (name === '' || email === '' || message === '') {
+			return (formIncomplete = true);
+		}
+
+		formIncomplete = false; // remove form incomplete notification
 		clicked = true; // starts button text fade
 		disabled = true; // disabled form inputs and submit button
 		buttonSpring.set(formWidth); // increases button width to match loading bar
@@ -106,6 +115,14 @@
 		<Label labelFor="message">Message</Label>
 		<Textarea name="message" id="message" {disabled} />
 	</fieldset>
+	{#if formIncomplete}
+		<div
+			style={`width: ${formWidth}px`}
+			class="p-2 mb-4 text-white font-semibold bg-night border-2 border-red"
+		>
+			Form is incomplete. Please fill out all forms and try again.
+		</div>
+	{/if}
 	{#if !sent}
 		<button
 			bind:this={formButton}
@@ -137,7 +154,7 @@
 		<div
 			bind:this={loadingBarWrapper}
 			style={`width: ${$buttonSpring}px; height: ${buttonHeight}px;`}
-			class={`relative inline-block p-2  text-white font-semibold  bg-night border-2 
+			class={`relative inline-block p-2 text-white font-semibold bg-night border-2 
 			${loadingBarBorder}`}
 		>
 			<div
