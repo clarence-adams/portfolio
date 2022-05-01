@@ -30,7 +30,8 @@
 			border-b-2 border-green"
 		>
 			<h2 class="text-2xl font-semibold">{project.title}</h2>
-			<a href={project.url} target="_blank" class="no-underline">
+			<a href={project.url} target="_blank" class="no-underline text-[0px]">
+				Link to project's GitHub repository
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="w-8 h-8 fill-white hover:fill-magenta hover:cursor-pointer"
