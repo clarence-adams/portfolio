@@ -118,7 +118,7 @@
 	{#if formIncomplete}
 		<div
 			style={`width: ${formWidth}px`}
-			class="p-2 mb-4 text-white font-semibold bg-night border-2 border-red"
+			class="p-2 mb-4 text-white font-semibold bg-storm border-2 border-red"
 		>
 			Form is incomplete. Please fill out all forms and try again.
 		</div>
