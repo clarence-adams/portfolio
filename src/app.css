@@ -1,0 +1,35 @@
+@import '@fontsource/fira-mono';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--red: #f7768e;
+	--magenta: #bb9af7;
+	--green: #73daca;
+	--blue: #7aa2f7;
+	--cyan: #7dcfff;
+	--black: #414868;
+	--pure-black: #000;
+	--white: #c0caf5;
+	--pure-white: #ffffff;
+
+	--header-height: 4rem;
+}
+
+* {
+	font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+li,
+label,
+textarea {
+	font-weight: 500;
+	color: var(--white);
+}

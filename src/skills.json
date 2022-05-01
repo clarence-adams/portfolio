@@ -1,0 +1,34 @@
+[
+	{
+		"header": "Front End",
+		"skills": [
+			"HTML",
+			"CSS",
+			"JavaScript",
+			"Svelte",
+			"React",
+			"SvelteKit",
+			"NextJS",
+			"TailwindCSS",
+			"D3"
+		]
+	},
+	{
+		"header": "Back End",
+		"skills": ["Node", "Express", "Serverless", "SQL", "CockroachDB", "NoSQL", "MongoDB"]
+	},
+	{
+		"header": "Miscellaneous",
+		"skills": ["Git", "Github", "NPM", "Jamstack", "Vercel", "Figma", "Googling"]
+	},
+	{
+		"header": "Hobbies",
+		"skills": [
+			"Programming",
+			"Finding Costco deals",
+			"Video games",
+			"Home improvement",
+			"Making bad coffee / tea"
+		]
+	}
+]
