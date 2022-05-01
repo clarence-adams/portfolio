@@ -6,7 +6,7 @@
 
 <Header />
 
-<main class="flex flex-col gap-32 w-full px-8 pt-8 bg-night sm:px-16 sm:pt-16">
+<main class="flex flex-col gap-32 w-full px-8 pt-8 bg-night sm:px-16 sm:pt-16 2xl:px-64">
 	<slot />
 </main>
 

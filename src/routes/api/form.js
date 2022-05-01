@@ -13,13 +13,19 @@ const transporter = nodemailer.createTransport({
 });
 
 export const post = async ({ request }) => {
-	const body = await request.json();
+	const body = await request.formData();
 
 	const mailData = {
 		from: sender, // sender address
 		to: sender, // list of receivers
 		subject: 'New contact',
-		text: 'name: ' + body.name + '\nemail: ' + body.email + '\n\nmessage: ' + body.message
+		text:
+			'name: ' +
+			body.get('name') +
+			'\nemail: ' +
+			body.get('email') +
+			'\n\nmessage: ' +
+			body.get('message')
 	};
 
 	let nodemailer;
