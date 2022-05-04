@@ -9,7 +9,6 @@
 
 	// form
 	let form;
-	let formRect;
 	let formWidth;
 	let formButton;
 	let formIncomplete = false;
@@ -37,8 +36,6 @@
 	let bgColor = 'bg-magenta';
 
 	onMount(() => {
-		formRect = form.getBoundingClientRect();
-		formWidth = formRect.width;
 		buttonRect = formButton.getBoundingClientRect();
 		buttonWidth = buttonRect.width;
 		buttonHeight = buttonRect.height;
@@ -106,7 +103,12 @@
 	});
 </script>
 
-<form bind:this={form} id="form" on:submit|preventDefault={formHandler}>
+<form
+	bind:this={form}
+	bind:clientWidth={formWidth}
+	id="form"
+	on:submit|preventDefault={formHandler}
+>
 	<fieldset class="flex flex-col justify-center items-start text-white">
 		{#each inputs as input}
 			<Label labelFor={input}>{capitalize(input)}</Label>
@@ -140,7 +142,7 @@
 					width="16"
 					height="16"
 					fill="currentColor"
-					class="mt-1 mr-1"
+					class="mt-1.5 mr-1"
 					viewBox="0 0 16 16"
 				>
 					<path

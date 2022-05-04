@@ -18,19 +18,23 @@
 	const linkedin = 'linkedin.com/in/clarence-adams';
 
 	let windowWidth;
-	let landing;
-	let landingHeight;
+	let backgroundWidth;
+	let backgroundHeight;
 
-	const setLandingHeight = () => {
-		landing = document.querySelector('#landing');
-		landingHeight = landing.getBoundingClientRect().height;
+	const setBackgroundDimensions = () => {
+		// get width of page
+		let html = document.querySelector('html');
+		backgroundWidth = html.clientWidth;
+		// cannot use bind:this on a component
+		let landing = document.querySelector('#landing');
+		backgroundHeight = landing.getBoundingClientRect().height;
 	};
 
 	onMount(() => {
-		setLandingHeight();
+		setBackgroundDimensions();
 	});
 
-	$: windowWidth && setLandingHeight();
+	$: windowWidth && setBackgroundDimensions();
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -41,11 +45,11 @@
 </svelte:head>
 
 <!-- Landing -->
-<Section bind:this={landing} id="landing">
+<Section id="landing">
 	<!-- background pattern -->
 	<div
-		style={`height: calc(${landingHeight}px + 8rem)`}
-		class="absolute top-[-4rem] left-[-2rem] w-screen z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
+		style={`width: ${backgroundWidth}px; height: calc(${backgroundHeight}px + 8rem)`}
+		class="absolute top-[-4rem] left-[-2rem] z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
 	>
 		<SvgPattern />
 	</div>
@@ -97,7 +101,8 @@
 		{/each}
 	</div>
 	<div
-		class="absolute bottom-[-7rem] left-[-2rem] w-screen h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
+		style={`width: ${backgroundWidth}px`}
+		class="absolute bottom-[-7rem] left-[-2rem] h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
 	>
 		<SvgPattern />
 	</div>
@@ -112,7 +117,8 @@
 		{/each}
 	</div>
 	<div
-		class="absolute bottom-[-7rem] left-[-2rem] w-screen h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
+		style={`width: ${backgroundWidth}px`}
+		class="absolute bottom-[-7rem] left-[-2rem] h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
 	>
 		<SvgPattern />
 	</div>
