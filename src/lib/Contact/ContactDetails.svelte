@@ -6,7 +6,7 @@
 	export let linkedin;
 </script>
 
-<ul>
+<ul class="flex flex-col gap-0.5">
 	<li>
 		<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-envelope" viewBox="0 0 16 16">
 			<path
@@ -41,6 +41,5 @@
 		width: 16px;
 		height: 16px;
 		fill: var(--white);
-		transform: translate(0, 1px);
 	}
 </style>

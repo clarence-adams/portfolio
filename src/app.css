@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'open-sans';
+	font-style: normal;
+	src: url('/fonts/open-sans.ttf') format('truetype');
+}
+
 :root {
 	--red: #f7768e;
 	--magenta: #bb9af7;
@@ -18,7 +24,7 @@
 }
 
 * {
-	font-family: sans-serif;
+	font-family: open-sans;
 }
 
 h1,

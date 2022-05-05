@@ -14,7 +14,7 @@
 	md:bottom-auto md:justify-between lg:px-16 2xl:px-64"
 >
 	{#if windowWidth > 768}
-		<p class="text-3xl font-semibold text-magenta">Clarence Adams</p>
+		<p class="text-3xl font-bold text-magenta">Clarence Adams</p>
 	{/if}
 	{#if windowWidth < breakpoint}
 		<MobileNav />

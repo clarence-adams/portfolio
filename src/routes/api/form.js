@@ -15,29 +15,36 @@ const transporter = nodemailer.createTransport({
 export const post = async ({ request }) => {
 	const body = await request.formData();
 
-	const mailData = {
+	const mailData0 = {
 		from: sender, // sender address
 		to: sender, // list of receivers
 		subject: 'New contact',
-		text:
-			'name: ' +
-			body.get('name') +
-			'\nemail: ' +
-			body.get('email') +
-			'\n\nmessage: ' +
-			body.get('message')
+		text: `name: ${body.get('name')} \nemail: ${body.get('email')} \n\nmessage: ${body.get(
+			'message'
+		)}`
 	};
 
-	let nodemailer;
+	const mailData1 = {
+		from: sender,
+		to: body.get('email'),
+		subject: 'Thank you for contacting me!',
+		text: `Thank you for getting in touch with me ${body.get(
+			'name'
+		)}. I will get back with you ASAP!`
+	};
+
+	let nodemailer0;
+	let nodemailer1;
 
 	try {
-		nodemailer = await transporter.sendMail(mailData);
+		nodemailer0 = await transporter.sendMail(mailData0);
+		nodemailer1 = await transporter.sendMail(mailData1);
 	} catch (error) {
 		console.log(error);
 		return { status: 200, body: { success: false } };
 	}
 
-	if (nodemailer.accepted[0] !== sender) {
+	if (nodemailer0.accepted[0] !== sender) {
 		return { status: 200, body: { success: false } };
 	}
 

@@ -131,7 +131,6 @@
 
 <style>
 	#profile-img {
-		--img-circle-radius: 150px;
 		shape-outside: circle(175px at 150px 150px);
 	}
 </style>

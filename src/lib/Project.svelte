@@ -29,7 +29,7 @@
 			class="flex justify-between items-center pb-4 mb-4 
 			border-b-2 border-green"
 		>
-			<h2 class="text-2xl font-semibold">{project.title}</h2>
+			<h2 class="text-2xl font-bold">{project.title}</h2>
 			<a href={project.url} target="_blank" class="no-underline text-[0px]">
 				Link to project's GitHub repository
 				<svg

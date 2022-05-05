@@ -14,7 +14,7 @@
 		justify-content: center;
 		align-items: center;
 		font-size: 1.5rem;
-		font-weight: 600;
+		font-weight: 700;
 		height: var(--header-height);
 	}
 	a:hover {

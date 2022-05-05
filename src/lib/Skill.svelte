@@ -7,7 +7,7 @@
 	<H2 border="red">{skill.header}</H2>
 	<ul class="columns-1 sm:columns-2">
 		{#each skill.skills as skill}
-			<li class="flex mb-1.5 text-lg">
+			<li class="flex mb-1.5">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"

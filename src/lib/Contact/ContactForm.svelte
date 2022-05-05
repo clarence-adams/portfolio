@@ -38,7 +38,7 @@
 	onMount(() => {
 		buttonRect = formButton.getBoundingClientRect();
 		buttonWidth = buttonRect.width;
-		buttonHeight = buttonRect.height;
+		buttonHeight = buttonRect.height + 'px';
 		buttonSpring = spring(buttonWidth);
 	});
 
@@ -47,6 +47,7 @@
 	let loadingBarTimeout;
 
 	const formHandler = (e) => {
+		e.preventDefault();
 		const formData = new FormData(form);
 
 		const name = formData.get('name');
@@ -77,8 +78,9 @@
 						loadingBarBorder = 'border-red';
 					}, 2000);
 				} else {
+					buttonHeight = 'auto';
 					fetchTimeout = setTimeout(() => {
-						loadingBarText = 'Message sent!';
+						loadingBarText = `Message sent! Check ${email} for a confirmation email!`;
 						loadingBarBorder = 'border-green';
 					}, 2000);
 				}
@@ -103,12 +105,7 @@
 	});
 </script>
 
-<form
-	bind:this={form}
-	bind:clientWidth={formWidth}
-	id="form"
-	on:submit|preventDefault={formHandler}
->
+<form bind:this={form} bind:clientWidth={formWidth} id="form" on:submit={formHandler}>
 	<fieldset class="flex flex-col justify-center items-start text-white">
 		{#each inputs as input}
 			<Label labelFor={input}>{capitalize(input)}</Label>
@@ -129,9 +126,9 @@
 		<button
 			bind:this={formButton}
 			{disabled}
-			style={`width: ${$buttonSpring}px; height: ${buttonHeight}px;`}
+			style={`width: ${$buttonSpring}px; height: ${buttonHeight};`}
 			type="submit"
-			class={`flex p-2 text-left ${textColor} font-semibold ${bgColor}
+			class={`flex p-2 text-left ${textColor} font-bold ${bgColor}
 			border-2 border-magenta hover:text-white hover:bg-night 
 			active:bg-storm disabled:bg-night`}
 		>
@@ -142,7 +139,7 @@
 					width="16"
 					height="16"
 					fill="currentColor"
-					class="mt-1.5 mr-1"
+					class="mt-1 mr-1"
 					viewBox="0 0 16 16"
 				>
 					<path
@@ -155,7 +152,7 @@
 	{:else if sent}
 		<div
 			bind:this={loadingBarWrapper}
-			style={`width: ${$buttonSpring}px; height: ${buttonHeight}px;`}
+			style={`width: ${$buttonSpring}px; height: ${buttonHeight};`}
 			class={`relative inline-block p-2 text-white font-semibold bg-night border-2 
 			${loadingBarBorder}`}
 		>

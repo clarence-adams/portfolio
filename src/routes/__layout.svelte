@@ -3,9 +3,7 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import Header from '$lib/Header/Header.svelte';
-	import Footer from '$lib/tags/Footer.svelte';
 	import '../app.css';
 
 	let main;
@@ -19,11 +17,3 @@
 >
 	<slot {main} />
 </main>
-
-<Footer />
-
-<style>
-	main {
-		min-height: calc(100vh - var(--header-height));
-	}
-</style>
