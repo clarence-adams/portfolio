@@ -28,9 +28,10 @@ export const post = async ({ request }) => {
 		from: sender,
 		to: body.get('email'),
 		subject: 'Thank you for contacting me!',
-		text: `Thank you for getting in touch with me ${body.get(
-			'name'
-		)}. I will get back with you ASAP!`
+		text:
+			'Hello ' +
+			body.get('name') +
+			',\n\nThank you for getting in touch with me through https://clarenceadams.dev. I will get back with you ASAP! \n\n- Clarence'
 	};
 
 	let nodemailer0;
