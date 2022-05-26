@@ -38,7 +38,9 @@ export const post = async ({ request }) => {
 	let nodemailer1;
 
 	try {
+		// @ts-ignore
 		nodemailer0 = await transporter.sendMail(mailData0);
+		// @ts-ignore
 		nodemailer1 = await transporter.sendMail(mailData1);
 	} catch (error) {
 		console.log(error);
