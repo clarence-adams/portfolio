@@ -1,4 +1,4 @@
-<nav class="flex items-center h-full">
+<nav class="hidden flex items-center h-full sm:block">
 	<ul class="flex gap-8">
 		<li><a href="#landing">About</a></li>
 		<li><a href="#skills">Skills</a></li>
