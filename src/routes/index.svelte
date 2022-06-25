@@ -13,6 +13,15 @@
 	import Project from '$lib/Project.svelte';
 	import Contact from '$lib/Contact/Contact.svelte';
 
+	const featuredProject = {
+		id: 'stox',
+		title: 'Stox',
+		description:
+			'Stox is a web app that you can use to trade fake stocks. It uses the IEX cloud API to fetch real time stock data and features form validation for sign up.',
+		url: 'https://stox-cb6j0pe33-clarence-adams.vercel.app/',
+		githubUrl: 'https://github.com/clarence-adams/stox'
+	};
+
 	const email = 'clarence.e.a@gmail.com';
 	const github = 'github.com/clarence-adams';
 	const linkedin = 'linkedin.com/in/clarence-adams';
@@ -49,7 +58,7 @@
 	<!-- background pattern -->
 	<div
 		style={`width: ${backgroundWidth}px; height: calc(${backgroundHeight}px + 8rem)`}
-		class="absolute top-[-4rem] left-[-2rem] z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
+		class="absolute top-[-4rem] left-[-2rem] z-0 sm:left-[-4rem] 2xl:left-[-16rem] 3xl:left-[-24rem]"
 	>
 		<SvgPattern />
 	</div>
@@ -111,7 +120,14 @@
 <!-- Projects -->
 
 <Section id="projects">
-	<div class="grid grid-cols-1 grid-rows-1 gap-16 md:grid-cols-2 md:grid-rows-2">
+	<!-- Featured Project -->
+	<div class="flex justify-center pb-16">
+		<Project project={featuredProject} featured />
+	</div>
+	<!-- Projects Grid-->
+	<div
+		class="grid grid-cols-1 grid-rows-1 justify-items-center gap-16 md:grid-cols-2 md:grid-rows-2"
+	>
 		{#each projects as project}
 			<Project {project} />
 		{/each}

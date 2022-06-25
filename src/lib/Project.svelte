@@ -2,6 +2,9 @@
 	import { spring } from 'svelte/motion';
 
 	export let project;
+	export let featured = false;
+
+	let borderColor = featured ? 'border-yellow' : 'border-green';
 
 	let yTranslate = spring(0);
 	let scale = spring(1);
@@ -21,13 +24,13 @@
 		scale.set(1);
 	}}
 	{style}
-	class="flex flex-col justify-between gap-4 p-4 border-2 border-green 
-	no-underline active:bg-storm"
+	class={`flex flex-col justify-between gap-4 max-w-xl p-4 border-2 ${borderColor} 
+	no-underline active:bg-storm`}
 >
 	<div>
 		<div
-			class="flex justify-between items-center pb-4 mb-4 
-			border-b-2 border-green"
+			class={`flex justify-between items-center pb-4 mb-4 
+			border-b-2 ${borderColor}`}
 		>
 			<h2 class="text-2xl font-bold">{project.title}</h2>
 			<a href={project.url} target="_blank" class="no-underline text-[0px]">
