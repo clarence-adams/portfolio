@@ -18,7 +18,7 @@
 		title: 'Stox',
 		description:
 			'Stox is a web app that you can use to trade fake stocks. It uses the IEX cloud API to fetch real time stock data and features form validation for sign up.',
-		url: 'https://stox-cb6j0pe33-clarence-adams.vercel.app/',
+		url: 'https://stox-wheat.vercel.app/',
 		githubUrl: 'https://github.com/clarence-adams/stox'
 	};
 
