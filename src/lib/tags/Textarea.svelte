@@ -8,5 +8,5 @@
 	{name}
 	{id}
 	{disabled}
-	class="w-full min-h-[8rem] px-1 py-px mb-4 bg-transparent border-2 border-cyan"
+	class="mb-4 min-h-[8rem] w-full border-2 border-cyan bg-transparent px-1 py-px"
 />

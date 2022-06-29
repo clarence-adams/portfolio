@@ -4,4 +4,4 @@
 	export let disabled;
 </script>
 
-<input {name} {id} {disabled} class="w-full px-1 py-px mb-4 bg-transparent border-2 border-cyan" />
+<input {name} {id} {disabled} class="mb-4 w-full border-2 border-cyan bg-transparent px-1 py-px" />

@@ -1,4 +1,4 @@
-<nav class="flex justify-center items-center w-full h-full sm:hidden">
+<nav class="flex h-full w-full items-center justify-center sm:hidden">
 	<ul class="flex gap-8">
 		<li>
 			<a href="#landing">

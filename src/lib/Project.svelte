@@ -24,7 +24,7 @@
 		scale.set(1);
 	}}
 	{style}
-	class={`flex flex-col justify-between gap-4 max-w-xl p-4 border-2 ${borderColor} 
+	class={`flex flex-col bg-night justify-between gap-4 max-w-xl p-4 border-2 ${borderColor} 
 	no-underline active:bg-storm`}
 >
 	<div>
@@ -33,11 +33,11 @@
 			border-b-2 ${borderColor}`}
 		>
 			<h2 class="text-2xl font-bold">{project.title}</h2>
-			<a href={project.url} target="_blank" class="no-underline text-[0px]">
+			<a href={project.url} target="_blank" class="text-[0px] no-underline">
 				Link to project's GitHub repository
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="w-8 h-8 fill-white hover:fill-magenta hover:cursor-pointer"
+					class="h-8 w-8 fill-white hover:cursor-pointer hover:fill-magenta"
 					viewBox="0 0 16 16"
 				>
 					<path
@@ -48,5 +48,5 @@
 		</div>
 		<p>{project.description}</p>
 	</div>
-	<img src={`/projects/${project.id}.png`} alt="" />
+	<img src={`/projects/${project.id}.png`} alt="" loading="lazy" />
 </a>

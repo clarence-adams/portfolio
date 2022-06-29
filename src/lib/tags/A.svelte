@@ -3,4 +3,4 @@
 	export let target;
 </script>
 
-<a {href} {target} class="text-magenta decoration-2 decoration-red hover:underline"><slot /></a>
+<a {href} {target} class="text-magenta decoration-red decoration-2 hover:underline"><slot /></a>

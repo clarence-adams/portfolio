@@ -10,8 +10,7 @@
 
 <div
 	id="contact-wrapper"
-	class="relative left-1/2 -translate-x-1/2 flex flex-col 
-  justify-start items-center w-80 mb-32 p-4 border-2 border-blue sm:mb-16 sm:w-96"
+	class="relative left-1/2 mb-32 flex max-w-[theme(spacing.96)] -translate-x-1/2 flex-col items-center justify-start border-2 border-blue bg-night p-4 sm:mb-16"
 >
 	<H2 border="blue">Contact</H2>
 	<div class="flex flex-col gap-4">

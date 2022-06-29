@@ -106,7 +106,7 @@
 </script>
 
 <form bind:this={form} bind:clientWidth={formWidth} id="form" on:submit={formHandler}>
-	<fieldset class="flex flex-col justify-center items-start text-white">
+	<fieldset class="flex flex-col items-start justify-center text-white">
 		{#each inputs as input}
 			<Label labelFor={input}>{capitalize(input)}</Label>
 			<Input name={input} id={input} {disabled} />
@@ -117,7 +117,7 @@
 	{#if formIncomplete}
 		<div
 			style={`width: ${formWidth}px`}
-			class="p-2 mb-4 text-white font-semibold bg-storm border-2 border-red"
+			class="mb-4 border-2 border-red bg-storm p-2 font-semibold text-white"
 		>
 			Form is incomplete. Please fill out all forms and try again.
 		</div>

@@ -3,11 +3,11 @@
 	export let skill;
 </script>
 
-<div class="p-4 border-2 border-red">
+<div class="border-2 border-red bg-night p-4">
 	<H2 border="red">{skill.header}</H2>
 	<ul class="columns-1 sm:columns-2">
 		{#each skill.skills as skill}
-			<li class="flex mb-1.5">
+			<li class="mb-1.5 flex">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"

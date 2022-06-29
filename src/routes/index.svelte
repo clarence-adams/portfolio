@@ -27,23 +27,6 @@
 	const linkedin = 'linkedin.com/in/clarence-adams';
 
 	let windowWidth;
-	let backgroundWidth;
-	let backgroundHeight;
-
-	const setBackgroundDimensions = () => {
-		// get width of page
-		let html = document.querySelector('html');
-		backgroundWidth = html.clientWidth;
-		// cannot use bind:this on a component
-		let landing = document.querySelector('#landing');
-		backgroundHeight = landing.getBoundingClientRect().height;
-	};
-
-	onMount(() => {
-		setBackgroundDimensions();
-	});
-
-	$: windowWidth && setBackgroundDimensions();
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -53,29 +36,26 @@
 	<meta name="description" content="Clarence Adams, a full stack developer" />
 </svelte:head>
 
+<!-- background pattern -->
+<div class="absolute top-0 left-0 z-0 h-full w-full">
+	<SvgPattern />
+</div>
 <!-- Landing -->
 <Section id="landing">
-	<!-- background pattern -->
-	<div
-		style={`width: ${backgroundWidth}px; height: calc(${backgroundHeight}px + 8rem)`}
-		class="absolute top-[-4rem] left-[-2rem] z-0 sm:left-[-4rem] 2xl:left-[-16rem] 3xl:left-[-24rem]"
-	>
-		<SvgPattern />
-	</div>
 	<!-- content -->
-	<div class="relative flex flex-col justify-start items-center z-10 md:block">
+	<div class="relative z-10 flex flex-col items-center justify-start md:block">
 		<!-- profile picture -->
 		<img
 			src="/profile.jpg"
 			alt=""
 			id="profile-img"
-			class="float-none w-[250px] h-[250px] mb-8 mr-0 rounded-full shadow-inner sm:w-[300px] sm:h-[300px] md:mb-0 md:mr-8 md:float-left"
+			class="float-none mb-8 mr-0 h-[250px] w-[250px] rounded-full shadow-inner sm:h-[300px] sm:w-[300px] md:float-left md:mb-0 md:mr-8"
 		/>
-		<h1 class="text-3xl font-bold text-left sm:text-4xl md:text-5xl">
+		<h1 class="bg-night text-left text-3xl font-bold sm:text-4xl md:text-5xl">
 			Hello! I'm Clarence, a full stack developer.
 		</h1>
-		<hr class="w-full h-0.5 my-4 bg-red border-0 md:w-auto" />
-		<p class="mb-8">
+		<hr class="my-4 h-0.5 w-full border-0 bg-red md:w-auto" />
+		<p class="mb-8 bg-night">
 			Welcome to my personal portfolio! Below you'll find some useful (and not very useful)
 			information about me as well as some of the projects I've done. <A
 				href="https://github.com/clarence-adams/portfolio"
@@ -88,7 +68,7 @@
 			favorite VS Code theme
 			<A href="https://github.com/enkia/tokyo-night-vscode-theme" target="_blank">Tokyo Night</A>.
 		</p>
-		<p>
+		<p class="bg-night">
 			In 2018 I started my first real career in residential HVAC. I found out I was pretty good at
 			solving difficult wiring problems, diagnosing faulty relays, and accurately diagnosing
 			advanced refigerant issues. I wanted to leverage my problem solving skills so I could get out
@@ -109,12 +89,6 @@
 			<Skill {skill} />
 		{/each}
 	</div>
-	<div
-		style={`width: ${backgroundWidth}px`}
-		class="absolute bottom-[-7rem] left-[-2rem] h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
-	>
-		<SvgPattern />
-	</div>
 </Section>
 
 <!-- Projects -->
@@ -131,12 +105,6 @@
 		{#each projects as project}
 			<Project {project} />
 		{/each}
-	</div>
-	<div
-		style={`width: ${backgroundWidth}px`}
-		class="absolute bottom-[-7rem] left-[-2rem] h-24 z-0 sm:left-[-4rem] 2xl:left-[-16rem]"
-	>
-		<SvgPattern />
 	</div>
 </Section>
 

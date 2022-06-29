@@ -3,8 +3,8 @@
 </script>
 
 <h2
-	class="self-start w-full text-2xl pb-4 mb-4 font-bold 
-  border-b-2 border-{border}"
+	class="mb-4 w-full self-start border-b-2 pb-4 text-2xl 
+  font-bold border-{border}"
 >
 	<slot />
 </h2>
