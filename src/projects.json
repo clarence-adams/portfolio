@@ -1,10 +1,10 @@
 [
 	{
-		"id": "slone",
-		"title": "Slone Heating & Air",
-		"description": "Slone Heating & Air is a brochure site for a HVAC company in Lexington KY.",
-		"url": "http://www.sloneheatingandair.com",
-		"githubUrl": "https://github.com/clarence-adams/slone-heating-and-air"
+		"id": "adams",
+		"title": "Adams Roofing",
+		"description": "Adams Roofing is a brochure site for my fathers roofing business.",
+		"url": "https://www.adamsroofingky.com/",
+		"githubUrl": "https://github.com/clarence-adams/adams-roofing"
 	},
 	{
 		"id": "calculator",
