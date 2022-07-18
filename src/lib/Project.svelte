@@ -12,9 +12,7 @@
 	$: style = `transform: translate(0, ${$yTranslate}px) scale(${$scale})`;
 </script>
 
-<a
-	href={project.url}
-	target="_blank"
+<div
 	on:mouseenter={() => {
 		yTranslate.set(-15);
 		scale.set(1.01);
@@ -33,7 +31,7 @@
 			border-b-2 ${borderColor}`}
 		>
 			<h2 class="text-2xl font-bold">{project.title}</h2>
-			<a href={project.url} target="_blank" class="text-[0px] no-underline">
+			<a href={project.url} target="_blank" class="z-40 text-[0px] no-underline">
 				Link to project's GitHub repository
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -48,5 +46,7 @@
 		</div>
 		<p>{project.description}</p>
 	</div>
-	<img src={`/projects/${project.id}.png`} alt="" loading="lazy" />
-</a>
+	<a href={project.url} target="_blank">
+		<img src={`/projects/${project.id}.png`} alt="" loading="lazy" />
+	</a>
+</div>

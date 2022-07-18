@@ -1,7 +1,7 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import { spring } from 'svelte/motion';
-	import { fade } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 	import capitalize from '$lib/utils/capitalize.js';
 	import Label from '$lib/tags/Label.svelte';
 	import Input from '$lib/tags/Input.svelte';
@@ -116,6 +116,7 @@
 	</fieldset>
 	{#if formIncomplete}
 		<div
+			transition:slide|local={{ delay: 250, duration: 250 }}
 			style={`width: ${formWidth}px`}
 			class="mb-4 border-2 border-red bg-storm p-2 font-semibold text-white"
 		>
@@ -130,7 +131,7 @@
 			type="submit"
 			class={`flex p-2 text-left ${textColor} font-bold ${bgColor}
 			border-2 border-magenta hover:text-white hover:bg-night 
-			active:bg-storm disabled:bg-night`}
+			active:bg-storm disabled:bg-night flex-grow`}
 		>
 			{#if !clicked}
 				<svg
@@ -139,7 +140,7 @@
 					width="16"
 					height="16"
 					fill="currentColor"
-					class="mt-1 mr-1"
+					class="mt-1 mr-1 flex-shrink-0"
 					viewBox="0 0 16 16"
 				>
 					<path
@@ -152,6 +153,7 @@
 	{:else if sent}
 		<div
 			bind:this={loadingBarWrapper}
+			transition:slide|local={{ delay: 250, duration: 250 }}
 			style={`width: ${$buttonSpring}px; height: ${buttonHeight};`}
 			class={`relative inline-block p-2 text-white font-semibold bg-night border-2 
 			${loadingBarBorder}`}
