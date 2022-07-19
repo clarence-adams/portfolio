@@ -9,14 +9,14 @@
 	{
 		"id": "calculator",
 		"title": "Calculator",
-		"description": "A simple javascript calculator built using React.",
+		"description": "A simple javascript calculator built with React.",
 		"url": "https://flamboyant-kalam-8ca516.netlify.app",
 		"githubUrl": "https://github.com/clarence-adams/fcc-calculator"
 	},
 	{
 		"id": "pomodoro",
 		"title": "Pomodoro Timer",
-		"description": "A functional Pomodoro timer built using React you can use to split up your working day between work blocks and rest blocks",
+		"description": "A functional Pomodoro timer built with React you can use to split up your working day between work blocks and rest blocks",
 		"url": "https://suspicious-noether-2de41b.netlify.app",
 		"githubUrl": "https://github.com/clarence-adams/fcc-clock"
 	}

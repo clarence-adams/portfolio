@@ -9,12 +9,12 @@
 	let yTranslate = spring(0);
 	let scale = spring(1);
 
-	$: style = `transform: translate(0, ${$yTranslate}px) scale(${$scale})`;
+	$: style = `transform: translate(0, ${$yTranslate}%) scale(${$scale})`;
 </script>
 
 <div
 	on:mouseenter={() => {
-		yTranslate.set(-15);
+		yTranslate.set(-5);
 		scale.set(1.01);
 	}}
 	on:mouseleave={() => {
@@ -22,16 +22,12 @@
 		scale.set(1);
 	}}
 	{style}
-	class={`flex flex-col bg-night justify-between gap-4 max-w-xl p-4 border-2 ${borderColor} 
-	no-underline active:bg-storm`}
+	class="{borderColor} flex max-w-xl flex-col justify-between gap-4 border-2 bg-night p-4 no-underline active:bg-storm"
 >
 	<div>
-		<div
-			class={`flex justify-between items-center pb-4 mb-4 
-			border-b-2 ${borderColor}`}
-		>
+		<div class="{borderColor} mb-4 flex items-center justify-between border-b-2 pb-4">
 			<h2 class="text-2xl font-bold">{project.title}</h2>
-			<a href={project.url} target="_blank" class="z-40 text-[0px] no-underline">
+			<a href={project.githubUrl} target="_blank" class="z-40 text-[0px] no-underline">
 				Link to project's GitHub repository
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
