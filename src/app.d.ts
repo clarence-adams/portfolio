@@ -8,7 +8,15 @@ declare namespace App {
 	}
 
 	// interface Platform {}
-
+	interface Platform {
+		env: {
+			EMAIL: DurableObjectNamespace;
+		};
+		context: {
+			waitUntil(promise: Promise<any>): void;
+		};
+		caches: CacheStorage & { default: Cache };
+	}
 	// interface Session {}
 
 	// interface Stuff {}
