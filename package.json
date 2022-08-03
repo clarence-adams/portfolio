@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -22,7 +22,8 @@
 		"prettier-plugin-svelte": "^2.5.0",
 		"prettier-plugin-tailwindcss": "^0.1.11",
 		"svelte": "^3.46.0",
-		"tailwindcss": "^3.0.24"
+		"tailwindcss": "^3.0.24",
+		"vite": "^3.0.4"
 	},
 	"type": "module",
 	"dependencies": {
