@@ -35,13 +35,14 @@ export const post = async ({ request }) => {
 	};
 
 	let nodemailer0;
-	let nodemailer1;
 
 	try {
+		// send message
 		// @ts-ignore
 		nodemailer0 = await transporter.sendMail(mailData0);
+		// send confirmation email
 		// @ts-ignore
-		nodemailer1 = await transporter.sendMail(mailData1);
+		await transporter.sendMail(mailData1);
 	} catch (error) {
 		console.log(error);
 		return { status: 200, body: { success: false } };
